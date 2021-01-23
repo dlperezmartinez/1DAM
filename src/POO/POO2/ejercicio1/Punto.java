@@ -1,4 +1,4 @@
-package POO2.ejercicio1;
+package POO.POO2.ejercicio1;
 
 public class Punto 
 {

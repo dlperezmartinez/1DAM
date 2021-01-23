@@ -1,4 +1,4 @@
-package POO1.ejercicio1;
+package POO.POO1.ejercicio1;
 
 public class Principal {
 

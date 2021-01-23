@@ -1,4 +1,4 @@
-package POO2.ejercicio4;
+package POO.POO2.ejercicio4;
 
 public class Articulo 
 {
