@@ -1,4 +1,4 @@
-package POO.POO3.ejercicio1;
+package POO.POO4.ejercicio1;
 
 import java.util.Scanner;
 
@@ -9,19 +9,26 @@ public class Principal
 		//SCANNER
 		Scanner in = new Scanner(System.in);
 
+		//VARIABLES
 		int x,y;
 
+		//OBJETOS
 		Punto p = new Punto ();
 
-		System.out.print("Introduce coordenada X: ");
-		p.setCoordenadaX(in.nextInt());
-		System.out.print("Introduce coordenada Y: ");
-		p.setCoordenadaY(in.nextInt());
+		//INTRODUCCIÓN DE DATOS
+		System.out.println("Introduce las coordenadas (primero X y luego Y)");
+		p.setXY(in.nextInt(), in.nextInt());
 
 		x = p.getCoordenadaX();
 		y = p.getCoordenadaY();
 
-		System.out.println("Coordenadas del punto: X " + x + " Y " + y);
+		//MOSTRAR
+		p.imprime();
+		System.out.println("Cuantas posiciones quieres deplazar? (primero X y luego Y)");
+		p.desplaza(in.nextInt(), in.nextInt());
+		p.imprime();
+		//p.distancia(p);
+
 	}
 
 }

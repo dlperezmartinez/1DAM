@@ -1,4 +1,4 @@
-package POO.POO3.ejercicio2;
+package POO.POO4.ejercicio2;
 
 import java.util.Scanner;
 
