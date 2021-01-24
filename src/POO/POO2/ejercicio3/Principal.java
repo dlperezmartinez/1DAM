@@ -9,51 +9,17 @@ public class Principal
 	{
 		//IN
 		Scanner in = new Scanner(System.in);
-		//VARIABLES
-		int menu = 0;
-		String numero;
-		
-		//OBJETOS
-		Rectangulo uno = new Rectangulo();
-		Rectangulo dos = new Rectangulo();
-		
-		//OPERACIONES
-		//Rectangulo uno.
-		System.out.println("\nRECTANGULO UNO\n");
-		
-		//Definir atributos
-		uno.x1 = 0;
-		uno.y1 = 0;
-		uno.x2 = 5;
-		uno.y2 = 5;
-		
-		//calculos
-		uno.lado1 = uno.x2 - uno.x1;
-		uno.lado2 = uno.y2 - uno.y1;
-		
-		//metodos
-		uno.coordenadas();
-		uno.area();
-		uno.perimetro();
-		
-		//Rectangulo dos.
-		System.out.println("\nRECTANGULO DOS\n");
-		
-		//Definir atributos
-		dos.x1 = 7;
-		dos.y1 = 9;
-		dos.x2 = 2;
-		dos.y2 = 3;
-		
-		//calculos
-		dos.lado1 = dos.x2 - dos.x1;
-		dos.lado2 = dos.y2 - dos.y1;
 
-		//métodos
-		dos.coordenadas();
-		dos.area();
-		dos.perimetro();
-		
+		//OBJETOS
+		System.out.println("Introduce las coordenadas del Rectangulo con este orden (x1,y1) (x2,y2)");
+		Rectangulo uno = new Rectangulo(in.nextInt(), in.nextInt(), in.nextInt(), in.nextInt());
+
+		if (uno.continuar) //Si se NO se cumple la condición if de Rectangulo funciona el resto del programa.
+		{
+			uno.coordenadas();
+			uno.area();
+			uno.perimetro();
+		}
 	}
 }
 

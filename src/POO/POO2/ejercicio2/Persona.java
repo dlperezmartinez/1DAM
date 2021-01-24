@@ -11,31 +11,18 @@ public class Persona
 	public String nombre;
 	public String apellidos;
 	public int edad;
-	
-	public void datos()
+
+	public Persona()
 	{
-		System.out.println("\n-INTRODUCE TUS DATOS-\n");
-		System.out.print("Nombre: ");
-		nombre = in.nextLine();
-		
-		System.out.print("\nApellidos : ");
-		apellidos = in.nextLine();
-		
-		System.out.print("\nDNI : ");
-		dni = in.nextLine();
-		
-		System.out.print("\nEdad : ");
-		edad = in.nextInt();
+		this.dni = "Unknown";
+		this.nombre = "Anonimo";
 	}
-	
-	public void persona()
+
+	public Persona(String dni, String nombre, String apellidos, int edad)
 	{
-		String esMayor = "es";
-		if (edad < 18)
-		{
-			esMayor = " NO es";
-		}
-		
-		System.out.println("\nPersona: " + nombre + " " + apellidos + " con DNI " + dni + esMayor +" mayor de edad");
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.edad = edad;
 	}
 }

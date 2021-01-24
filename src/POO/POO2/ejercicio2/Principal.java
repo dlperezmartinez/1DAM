@@ -11,15 +11,14 @@ public class Principal
 		Scanner in = new Scanner(System.in);
 		
 		//OBJETOS
-		Persona uno = new Persona();
-		Persona dos = new Persona();
-		
-		//OPERACIONES
-		uno.datos();
-		uno.persona();
-		
-		dos.datos();
-		dos.persona();
+		Persona uno = new Persona("20648562N", "Pepe", "Segundo", 54);
+		Persona dos = new Persona("46532148A", "Fran", "Garcia", 16);
+		Persona desconocida = new Persona();
+
+		//PRINTS
+		System.out.println(uno.nombre + " " + uno.apellidos + " con DNI " + uno.dni + " tiene " + uno.edad + " años.");
+		System.out.println(dos.nombre + " " + dos.apellidos + " con DNI " + dos.dni + " tiene " + dos.edad + " años.");
+		System.out.println(desconocida.nombre + " " + desconocida.apellidos + " con DNI " + desconocida.dni + " tiene " + desconocida.edad + " años.");
 	}
 
 }
