@@ -36,4 +36,16 @@ public class Articulo
 	//pvp
 	public float getPvp() {return pvp;}
 	public void setPvp() {this.pvp = precio * ((iva/100) + 1);}
+
+	//METODOS
+	public void imprimirArticulo()
+	{
+		System.out.println("\n-ARTICULO-\n");
+		System.out.print("Nombre: " + nombre);
+		System.out.print("\nPrecio: " + precio);
+		System.out.print("\nIVA: " + iva + "%");
+		System.out.print("\nPVP: " + pvp);
+
+	}
 }
+

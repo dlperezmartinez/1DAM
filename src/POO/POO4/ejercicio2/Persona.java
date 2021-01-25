@@ -44,4 +44,41 @@ public class Persona
 	//edad
 	public int getEdad() { return edad; }
 	public void setEdad(int edad) { this.edad = edad; }
+
+	//METODOS
+	public void imprime() //Imprime la información
+	{
+		System.out.println(nombre + " " + apellidos + " con DNI " + dni + " tiene " + edad + " años.");
+	}
+
+	public boolean esMayorEdad(int edad) //Devuelve si es mayor de edad o no
+	{
+		if (edad > 18)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public boolean esJubilado(int edad) // Devuelve true si tiene 65 años o más
+	{
+		if (edad > 65)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public int diferenciaEdad(Persona p) // Devuelve la diferencia de edad entre ‘this’ y p.
+	{
+		int diferencia = this.edad - p.edad;
+		diferencia *= 1;
+		return diferencia;
+	}
 }

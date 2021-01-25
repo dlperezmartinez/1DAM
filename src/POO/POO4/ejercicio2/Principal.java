@@ -14,6 +14,7 @@ public class Principal
 		String nombre;
 		String apellidos;
 		int edad;
+		String noEs = "No es "; //Se utiliza para los metodos esMayorEdad y esJubilado
 
 		//OBJETOS
 		Persona uno = new Persona();
@@ -32,7 +33,21 @@ public class Principal
 		apellidos = uno.getApellidos();
 		edad = uno.getEdad();
 
-		//PRINTS
-		System.out.println(nombre + " " + apellidos + " con DNI " + dni + " tiene " + edad + " años.");
+		//METODOS
+		uno.imprime();
+		if (uno.esMayorEdad(edad)) //Comprueba si es mayor de edad
+		{
+			noEs = "Es ";
+		}
+		System.out.println(noEs + "mayor de edad.");
+		noEs = "No es "; //Reset
+
+		if (uno.esJubilado(uno.getEdad())) //Comprueba si es jubilado
+		{
+			noEs = "Es ";
+		}
+		System.out.println(noEs + "jubilado.");
+
+		System.out.print("La diferencia es: " + uno.diferenciaEdad(uno));
 	}
 }
