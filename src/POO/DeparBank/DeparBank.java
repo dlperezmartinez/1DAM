@@ -11,12 +11,21 @@ public class DeparBank
 
         //VARIABLES
         String nombre = "";
+        String iban = "";
         int menu = 0;
         int idCuenta = 0; //para la creación de cuentas
         boolean continuar = true;
 
         //OBJETOS
-        CuentaBancaria cuenta;
+        System.out.print("Introduce tu nombre y apellidos: ");
+        nombre = in.nextLine();
+
+        System.out.print("Introduce tu IBAN: ");
+        iban = in.nextLine();
+
+        System.out.println();
+        CuentaBancaria cuenta = new CuentaBancaria(nombre, iban);
+        System.out.println();
 
         //MENU
         while (continuar)
@@ -32,13 +41,7 @@ public class DeparBank
 
             switch (menu) {
                 case 1:
-                    System.out.print("Introduce tu nombre y apellidos: ");
-                     new CuentaBancaria(in.nextLine(), in.nextLine());
-
-                    System.out.println();
-
-                    System.out.print("Introduce tu IBAN: ");
-
+                    System.out.println("Opcion disponible proximamente");
 
                     break;
                 case 2:
@@ -48,11 +51,13 @@ public class DeparBank
 
                     break;
                 case 3:
-                    cuenta.ingreso(in.nextFloat(), cuenta.getSaldo());
+                    System.out.print("Cantidad a ingresar: ");
+                    cuenta.ingreso(in.nextFloat());
 
                     break;
                 case 4:
-                    cuenta.retirada(in.nextFloat(), cuenta.getSaldo());
+                    System.out.print("Cantidad a retirar: ");
+                    cuenta.retirada(in.nextFloat());
 
                     break;
                 case 5:
@@ -60,7 +65,7 @@ public class DeparBank
 
                     break;
                 case 6:
-                    System.out.println("Gracias por usar nuestros servicios Sr/Sra " + cuenta.getTitular());
+                    System.out.println("Gracias por utilizar nuestros servicios Sr/Sra " + cuenta.getTitular());
                     continuar = false;
 
                     break;

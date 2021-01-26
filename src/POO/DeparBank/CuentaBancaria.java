@@ -8,6 +8,8 @@ public class CuentaBancaria
     private float saldo;
     private String movimientos[];
 
+    Movimientos movimiento = new Movimientos();
+
     //VARIABLES
     int contador = 0;
 
@@ -17,56 +19,53 @@ public class CuentaBancaria
         this.titular = titular;
         saldo = 0;
         movimientos = new String[100];
-
-    public CuentaBancaria()
-    {
-        this.iban = "Unknown";
-        this.titular = "Unknown";
-        saldo = 0;
-        movimientos = new String[100];
     }
 
     //GETTERS Y SETTERS
     //Getters
-    public String getIban() {
+    public String getIban ()
+    {
         return iban;
     }
 
-    public String getTitular() {
+    public String getTitular () {
         return titular;
     }
 
-    public float getSaldo() {
+    public float getSaldo () {
         return saldo;
     }
 
-    public String[] getMovimientos() {
+    public String[] getMovimientos () {
         return movimientos;
     }
     //Setters
-    public void setMovimientos(String[] movimientos) {
+    public void setMovimientos (String[]movimientos){
         this.movimientos = movimientos;
     }
 
     //METODOS
-    public float ingreso (float cantidad, float saldo)
+    public void ingreso ( float cantidad ) //Metodo para ingresar dinero
     {
-        saldo += cantidad;
-        return saldo;
+        this.saldo += cantidad;
+        movimiento.ingreso(cantidad);
+        movimiento.saldo(this.saldo);
+        movimiento.setComprobante(1);
+        movimiento.setContador(1);
     }
 
-    public float retirada(float cantidad, float saldo)
+    public void retirada ( float cantidad ) //Metodo para retirar dinero
     {
-        saldo -= cantidad;
-        return saldo;
+        this.saldo -= cantidad;
+        movimiento.retirada(cantidad);
+        movimiento.saldo(this.saldo);
+        movimiento.setComprobante(-1);
+        movimiento.setContador(1);
     }
 
     public void mostrarMovimientos()
     {
-        for (int i = 0; i < contador; i++)
-        {
-            System.out.println(i + ". " + movimientos[0]);
-        }
+        movimiento.mostrarMovimientos();
     }
-
 }
+
