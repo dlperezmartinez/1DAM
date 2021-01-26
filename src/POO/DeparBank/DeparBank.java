@@ -1,9 +1,22 @@
 package POO.DeparBank;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class DeparBank
 {
+    /*public static boolean validarTitular (String titular)
+    {
+        String titularRegexp = "\\d{>0}";
+        return Pattern.matches(titularRegexp, titular);
+    }*/
+
+    public static boolean validarIBAN (String iban) //Valida el iban, 2 letras 22 números
+    {
+        String ibanRegexp = "²[A-Z]\\d{2}";//TODO He puesto solo 2 dígitos para facilitar el trabajo, cambiar al terminar
+        return Pattern.matches(ibanRegexp, iban);
+    }
+
     public static void main(String[] args)
     {
         //SCANNER
@@ -13,15 +26,31 @@ public class DeparBank
         String nombre = "";
         String iban = "";
         int menu = 0;
-        int idCuenta = 0; //para la creación de cuentas
+        int idCuenta = 0; //para la creación de cuentas TODO
         boolean continuar = true;
 
         //OBJETOS
-        System.out.print("Introduce tu nombre y apellidos: ");
-        nombre = in.nextLine();
+        //while (continuar)
+        //{
+            System.out.print("Introduce tu nombre y apellidos: ");
+            nombre = in.nextLine();
+        //}
 
-        System.out.print("Introduce tu IBAN: ");
-        iban = in.nextLine();
+        while (continuar)
+        {
+            System.out.print("Introduce tu IBAN: ");
+            iban = in.nextLine();
+
+            if (validarIBAN(iban))
+            {
+                continuar = false;
+            }
+            else
+            {
+                System.out.println("IBAN NO VALIDO");
+            }
+        }
+        continuar = true; //RESET
 
         System.out.println();
         CuentaBancaria cuenta = new CuentaBancaria(nombre, iban);

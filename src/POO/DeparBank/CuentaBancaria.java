@@ -1,5 +1,7 @@
 package POO.DeparBank;
 
+import java.util.regex.Pattern;
+
 public class CuentaBancaria
 {
     //ATRIBUTOS
@@ -47,23 +49,41 @@ public class CuentaBancaria
     //METODOS
     public void ingreso ( float cantidad ) //Metodo para ingresar dinero
     {
-        this.saldo += cantidad;
-        movimiento.ingreso(cantidad);
-        movimiento.saldo(this.saldo);
-        movimiento.setComprobante(1);
-        movimiento.setContador(1);
+        if (cantidad < 0)
+        {
+            System.out.println("Debes introducir una cantidad superior a 0");
+        }
+        else
+        {
+            this.saldo += cantidad;
+            movimiento.ingreso(cantidad);
+            movimiento.saldo(this.saldo);
+            movimiento.setComprobante(1);
+            movimiento.setContador(1);
+        }
     }
 
     public void retirada ( float cantidad ) //Metodo para retirar dinero
     {
-        this.saldo -= cantidad;
-        movimiento.retirada(cantidad);
-        movimiento.saldo(this.saldo);
-        movimiento.setComprobante(-1);
-        movimiento.setContador(1);
+        if (cantidad < 0)
+        {
+            System.out.println("Debes introducir una cantidad superior a 0");
+        }
+        else if (this.saldo <= 0 || this.saldo - cantidad < 0)
+        {
+            System.out.println("No hay saldo suficiente");
+        }
+        else
+        {
+            this.saldo -= cantidad;
+            movimiento.retirada(cantidad);
+            movimiento.saldo(this.saldo);
+            movimiento.setComprobante(-1);
+            movimiento.setContador(1);
+        }
     }
 
-    public void mostrarMovimientos()
+    public void mostrarMovimientos() //Muestra todos los movimientos (Accede a las class Movimientos.java)
     {
         movimiento.mostrarMovimientos();
     }
