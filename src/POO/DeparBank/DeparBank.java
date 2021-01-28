@@ -30,7 +30,7 @@ public class DeparBank
         boolean continuar = true;
 
         //OBJETOS
-        //while (continuar)
+        //while (continuar)//TODO descomentar
         //{
             System.out.print("Introduce tu nombre y apellidos: ");
             nombre = in.nextLine();

@@ -1,36 +1,43 @@
 package POO.CalculadoraNumComplejos;
 
-import java.util.Scanner;
-
 public class Calculadora
 {
-    public static void main(String[] args)
+
+    //ATRIBUTOS
+    private NumerosComplejos operando1, operando2, resultado; //Almacena los DOS números complejos y el resultado de la operación.
+    private  char operador; //Se utiliza para determinar el operador en el print
+    //private double resultado; //Resultado real y resultado imaginario.
+
+    //CONSTRUCTOR
+    public Calculadora()
     {
-        //SCANNER
-        Scanner in = new Scanner(System.in);
+        this.operando1 = new NumerosComplejos();
+        this.operando2 = new NumerosComplejos();
+        this.resultado = new NumerosComplejos();
+        this.operador = ' ';
+    }
 
-        //VARIABLES
-        double real = 0;
-        double imaginario = 0;
+    public NumerosComplejos suma(NumerosComplejos c1, NumerosComplejos c2)
+    {
+        this.operando1 = c1;
+        this.operando2 = c2;
+        this.operador = '+';
 
-        //OBJETOS
-        System.out.println("\n-CALCULADORA NUMEROS COMPLEJOS-\n");
-        System.out.println("Primer numero complejo");
-        System.out.print("-Introduce la parte Real: ");
-        real = in.nextDouble();
-        System.out.print("-Introduce la parte Imaginaria: ");
-        imaginario = in.nextDouble();
-        NumerosComplejos complejo1 = new NumerosComplejos(real, imaginario);
+        double resReal, resImaginario;
 
-        System.out.println("Segundo numero complejo");
-        System.out.print("-Introduce la parte Real: ");
-        real = in.nextDouble();
-        System.out.print("-Introduce la parte Imaginaria: ");
-        imaginario = in.nextDouble();
-        NumerosComplejos complejo2 = new NumerosComplejos(real, imaginario);
+        resReal = c1.getReal() + c2.getReal(); //Las dos partes reales
+        resImaginario = c1.getIm() + c2.getIm(); //Las dos partes imaginarias
+        resultado = new NumerosComplejos(resReal, resImaginario); //Resultado
+        return resultado;
+    }
 
-        //OPERACIONES
-        complejo1.suma(complejo2);
-        complejo1.print(complejo2);
+    @Override
+    public String toString() {
+        return "Calculadora{" +
+                "operando1=" + operando1 +
+                + operador +
+                ", operando2=" + operando2 +
+                ", resultado=" + resultado +
+                '}';
     }
 }
