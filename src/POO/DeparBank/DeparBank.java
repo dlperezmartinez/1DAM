@@ -13,7 +13,7 @@ public class DeparBank
 
     public static boolean validarIBAN (String iban) //Valida el iban, 2 letras 22 números
     {
-        String ibanRegexp = "²[A-Z]\\d{2}";//TODO He puesto solo 2 dígitos para facilitar el trabajo, cambiar al terminar
+        String ibanRegexp = "^2[A-Z]\\d{4}";//TODO He puesto solo 4 dígitos para facilitar el trabajo, cambiar al terminar
         return Pattern.matches(ibanRegexp, iban);
     }
 

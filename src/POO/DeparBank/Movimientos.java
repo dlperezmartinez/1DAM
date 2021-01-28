@@ -1,12 +1,12 @@
 package POO.DeparBank;
 
-public class Movimientos
+public class Movimientos //Esta clase sirve para registrar todos los movimientos que hace el usuario, guarda los ingresos, las retiradas y el saldo que queda en ese movimiento
 {
     //ATRIBUTOS
-    private float saldo[] = new float[100];
-    private float ingreso[] = new float[100];
-    private float retirada[] = new float[100];
-    private int comprobante[] = new int[100];
+    private float saldo[] = new float[100]; //Almacena saldos
+    private float ingreso[] = new float[100]; //Almacena ingresos
+    private float retirada[] = new float[100];//Almacena retiradas
+    private int comprobante[] = new int[100]; //Se utiliza para indexar ingresos(1) y retiradas(-1)
 
     public Movimientos()
     {
