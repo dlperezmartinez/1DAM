@@ -37,17 +37,9 @@ public class NumerosComplejos
     }
     //METODOS
 
-    @Override
-    public String toString() {
-        return "NumerosComplejos{" +
-                "real=" + real +
-                ", im=" + im +
-                '}';
-    }
-
-    public String print ()
+    public String print () //Imprime un NumeroComplejo con su estructura tipica
     {
-        return "(" + this.real + " + " + this.im + "i) ";
+        return "(" + this.real + " , " + this.im + "i)";
         // + operador[tipoO] + "(" + c.real + " + " + c.im + "i) " + " = (" + resRe + " + " + resIm + "i)"
     }
 }

@@ -13,8 +13,9 @@ public class InsertData
         double real = 0;
         double imaginario = 0;
         NumerosComplejos resultado; //Almacena el resultado de la operación de DOS NumerosComplejos
+        int menu = 0;
 
-        //OBJETOS
+        //OBJETOS Y INTRODUCCIÓN DE DATOS
         System.out.println("\n-CALCULADORA NUMEROS COMPLEJOS-\n");
         Calculadora calculadora = new Calculadora();
 
@@ -40,7 +41,24 @@ public class InsertData
 
         //OPERACIONES
         int tipoOperacion = 0; //Para saber que tipo de operación es
-        resultado = calculadora.suma(complejo1, complejo2);
-        System.out.printf(calculadora.toString());
+        menu = in.nextInt();
+
+        switch (menu)
+        {
+            case 1: //SUMA
+                resultado = calculadora.suma(complejo1, complejo2);
+
+                break;
+            case 2: //RESTA
+                resultado = calculadora.resta(complejo1, complejo2);
+
+                break;
+            case 3: //MULTIPLICACIÓN
+            case 4: //DIVISIÓN
+            default:
+                break;
+        }
+
+        System.out.print(calculadora.print(complejo1, complejo2));
     }
 }
