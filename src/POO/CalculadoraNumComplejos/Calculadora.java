@@ -104,9 +104,4 @@ public class Calculadora
         }
         return resultado;
     }
-
-    public String printVector(NumerosComplejos v[])
-    {
-        //TODO return v[1].print;
-    }
 }

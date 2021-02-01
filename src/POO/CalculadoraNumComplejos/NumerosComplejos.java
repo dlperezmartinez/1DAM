@@ -41,14 +41,4 @@ public class NumerosComplejos
     {
         return "(" + this.real + " , " + this.im + "i)";
     }
-
-    //generador de vectores de NumerosComplejos
-    //TODO public NumerosComplejos generadorVector(NumerosComplejos cvector[])
-    {
-        for (int i = 0; i < cvector.length; i++)
-        {
-            cvector[i] = new NumerosComplejos();
-        }
-        return cvector[cvector.length];
-    }
 }

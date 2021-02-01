@@ -34,7 +34,7 @@ public class InsertData
 
                 break;
             case 2:
-                calculadora.sumaVector(v); //TODO
+
 
                 break;
             default:
