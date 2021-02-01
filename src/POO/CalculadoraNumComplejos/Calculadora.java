@@ -93,4 +93,20 @@ public class Calculadora
             return c1.print() + operador + c2.print() + "=" + resultado.print();
         }
     }
+
+    //suma vector
+    public NumerosComplejos sumaVector (NumerosComplejos v[])
+    {
+        for (int i = 0; i < v.length; i++)
+        {
+            int j = 1;
+            resultado = suma(v[0], v[j]);
+        }
+        return resultado;
+    }
+
+    public String printVector(NumerosComplejos v[])
+    {
+        //TODO return v[1].print;
+    }
 }

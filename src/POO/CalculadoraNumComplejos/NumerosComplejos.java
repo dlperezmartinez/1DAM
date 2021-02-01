@@ -9,8 +9,8 @@ public class NumerosComplejos
     //CONSTRUCTOR
     public NumerosComplejos()
     {
-        this.real = 0;
-        this.im = 0;
+        this.real = (int) Math.random()*100+0;
+        this.im = (int) Math.random()*100+0;
     }
 
     public NumerosComplejos(double x, double y)
@@ -36,9 +36,19 @@ public class NumerosComplejos
         this.im = im;
     }
     //METODOS
-
+    //print NumerosComplejos
     public String print () //Imprime un NumeroComplejo con su estructura tipica
     {
         return "(" + this.real + " , " + this.im + "i)";
+    }
+
+    //generador de vectores de NumerosComplejos
+    //TODO public NumerosComplejos generadorVector(NumerosComplejos cvector[])
+    {
+        for (int i = 0; i < cvector.length; i++)
+        {
+            cvector[i] = new NumerosComplejos();
+        }
+        return cvector[cvector.length];
     }
 }
