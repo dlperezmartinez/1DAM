@@ -40,6 +40,5 @@ public class NumerosComplejos
     public String print () //Imprime un NumeroComplejo con su estructura tipica
     {
         return "(" + this.real + " , " + this.im + "i)";
-        // + operador[tipoO] + "(" + c.real + " + " + c.im + "i) " + " = (" + resRe + " + " + resIm + "i)"
     }
 }

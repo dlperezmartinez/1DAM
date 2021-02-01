@@ -41,6 +41,11 @@ public class InsertData
 
         //OPERACIONES
         int tipoOperacion = 0; //Para saber que tipo de operación es
+        System.out.println("");
+        System.out.println("| SUMA | RESTA | MULTIPLICACION | DIVISION |");
+        System.out.println("|  1   |   2   |        3       |     4    |");
+        System.out.println("|");
+        System.out.println("V");
         menu = in.nextInt();
 
         switch (menu)
@@ -54,7 +59,13 @@ public class InsertData
 
                 break;
             case 3: //MULTIPLICACIÓN
+                resultado = calculadora.multiplicacion(complejo1, complejo2);
+
+                break;
             case 4: //DIVISIÓN
+                resultado = calculadora.division(complejo1, complejo2);
+
+                break;
             default:
                 break;
         }
