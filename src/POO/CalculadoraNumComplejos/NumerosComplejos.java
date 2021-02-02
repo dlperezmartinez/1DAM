@@ -9,8 +9,8 @@ public class NumerosComplejos
     //CONSTRUCTOR
     public NumerosComplejos()
     {
-        this.real = (int) Math.random()*100+0;
-        this.im = (int) Math.random()*100+0;
+        this.real = 0;
+        this.im = 0;
     }
 
     public NumerosComplejos(double x, double y)
@@ -35,6 +35,7 @@ public class NumerosComplejos
     public void setIm(double im) {
         this.im = im;
     }
+
     //METODOS
     //print NumerosComplejos
     public String print () //Imprime un NumeroComplejo con su estructura tipica

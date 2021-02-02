@@ -4,7 +4,9 @@ public class Calculadora
 {
 
     //ATRIBUTOS
-    private NumerosComplejos operando1, operando2, resultado;
+    private NumerosComplejos operando1;
+    private NumerosComplejos operando2;
+    private NumerosComplejos resultado;
     private double resDenominador; //Almacena los DOS números complejos y el resultado de la operación.
     private  char operador; //Se utiliza para determinar el operador en el print
     //private double resultado; //Resultado real y resultado imaginario.
@@ -95,13 +97,19 @@ public class Calculadora
     }
 
     //suma vector
-    public NumerosComplejos sumaVector (NumerosComplejos v[])
+   /* public NumerosComplejos sumaVector (NumerosComplejos compl1, NumerosComplejos compl2)
     {
+        resultado = suma(compl);
+
         for (int i = 0; i < v.length; i++)
         {
-            int j = 1;
-            resultado = suma(v[0], v[j]);
+            resultado = suma(resultado, v[i].getValor());
         }
         return resultado;
     }
+
+    public String printVector()
+    {
+        return "Resultado: " + this.resultado;
+    }*/
 }
