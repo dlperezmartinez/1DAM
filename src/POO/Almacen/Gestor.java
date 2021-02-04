@@ -28,8 +28,7 @@ public class Gestor
                 {
                     if ( almacen [i] == null)
                     {
-                        Articulo dos = Articulo.class.newInstance();
-                        almacen [i] = Articulo(i) = new Articulo();
+                        almacen [i] = new Articulo();
                     }
 
                 }
