@@ -29,7 +29,16 @@ public class Gestor
                     if ( almacen [i] == null)
                     {
                         almacen [i] = new Articulo();
+                        almacen [i].setCodigo(in.nextLine());
+                        almacen [i].setDescripcion(in.nextLine());
+                        almacen [i].setPrecioCompra(in.nextDouble());
+                        almacen [i].setPrecioVenta(in.nextDouble());
+                        almacen [i].setStock(in.nextInt());
+
+                        break;
                     }
+
+
 
                 }
             case 3:
