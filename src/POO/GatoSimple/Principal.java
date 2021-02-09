@@ -89,9 +89,14 @@ public class Principal
 
                     break;
                 case 6: //VECTOR (oculto)
+                    vectorGatos[0] = gato1;
+                    vectorGatos[1] = gato2;
+                    vectorGatos[2] = gato3;
+                    vectorGatos[3] = gatoMacho;
+                    vectorGatos[4] = gatoHembra;
                     for (GatoSimple gato : vectorGatos)
                     {
-                        System.out.println(vectorGatos[i]);
+                        System.out.println(vectorGatos);
                     }
                 default:
                     System.out.println("Introduce numeros del 1 al 4 inclusive");
