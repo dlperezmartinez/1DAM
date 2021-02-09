@@ -4,7 +4,8 @@ package   POO.GatoSimple.Resuelto;
  * GatoSimple.java
  * Definición de la clase GatoSimple
  */
-public class GatoSimple {
+public class GatoSimple
+{
 
   // atributos /////////////////////////////
   
@@ -19,7 +20,8 @@ public class GatoSimple {
   // métodos ///////////////////////////////
   
   // constructor
-  GatoSimple (String n, String c, String r, String s, int e, double p) {
+  GatoSimple (String n, String c, String r, String s, int e, double p)
+  {
 	  this.nombre=n;
 	  this.color=c;
 	  this.raza=r;
