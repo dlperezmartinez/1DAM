@@ -12,10 +12,10 @@ public class InsertData
         //VARIABLES
         double real = 0;
         double imaginario = 0;
-        NumerosComplejos resultado; //Almacena el resultado de la operación de DOS NumerosComplejos
+        NumerosComplejos resultado = new NumerosComplejos(); //Almacena el resultado de la operación de DOS NumerosComplejos
         int menu = 0;
         boolean calc = false;
-        NumerosComplejos vector[] = new NumerosComplejos[5];
+        NumerosComplejos vector[];
 
         Calculadora calculadora = new Calculadora();
 
@@ -35,29 +35,42 @@ public class InsertData
 
                 break;
             case 2:
-                //Instancias manuales
-                resultado = new NumerosComplejos();
-                NumerosComplejos c0 = new NumerosComplejos((double)Math.random()*100+0, (double)Math.random()*100+0);
-                NumerosComplejos c1 = new NumerosComplejos((double)Math.random()*100+0, (double)Math.random()*100+0);
-                NumerosComplejos c2 = new NumerosComplejos((double)Math.random()*100+0, (double)Math.random()*100+0);
-                NumerosComplejos c3 = new NumerosComplejos((double)Math.random()*100+0, (double)Math.random()*100+0);
-                NumerosComplejos c4 = new NumerosComplejos((double)Math.random()*100+0, (double)Math.random()*100+0);
+                System.out.print("Inserte tamaño de la lista: ");
+                vector = new NumerosComplejos[in.nextInt()];
 
-                vector[0] = c0;
-                vector[1] = c1;
-                vector[2] = c2;
-                vector[3] = c3;
-                vector[4] = c4;
-                resultado = vector[0];
-
-                c0.print();
-                for(int i = 1; i < vector.length; i++)
+                for(int i = 0; i < vector.length; i++)
                 {
-                    resultado = calculadora.suma(resultado, vector[i]);
+                    vector[i] = new NumerosComplejos(Math.random()*10+0, Math.random()*10+0);
                 }
 
-                resultado.print();
+                //Sumatorio
+                System.out.println("\n-SUMATORIO-\n");
 
+                int i = 1;
+                for (NumerosComplejos n : vector)
+
+                {
+                    System.out.println("Numero complejo " + i + ": " +n.print());
+                    resultado = calculadora.suma(resultado, n);
+                    i++;
+                }
+
+                System.out.println("\nSuma total: " + resultado.print());
+
+                //Productorio
+                System.out.println("\n-PRODUCTORIO-\n");
+
+                i = 1; //RESET
+                resultado = new NumerosComplejos(1,1); //RESET
+
+                for (NumerosComplejos n : vector)
+                {
+                    System.out.println("Numero complejo " + i + ": " +n.print());
+                    resultado = calculadora.multiplicacion(resultado, n);
+                    i++;
+                }
+
+                System.out.println("\nProductorio total: " + resultado.print());
 
                 break;
             default:

@@ -40,6 +40,8 @@ public class NumerosComplejos
     //print NumerosComplejos
     public String print () //Imprime un NumeroComplejo con su estructura tipica
     {
-        return "(" + this.real + " , " + this.im + "i)";
+        return "(" + String.format("%.2f", this.real) + " , " + String.format("%.2f", this.im) + "i)";
     }
 }
+
+
