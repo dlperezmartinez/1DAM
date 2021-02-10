@@ -3,23 +3,39 @@ package POO.Almacen;
 public class Articulo
 {
     //ATRIBUTOS
-    private String codigo = "LIBRE";
+    private String nombre = null;
+    private String codigo;
     private String descripcion;
     private double precioCompra, precioVenta;
     private int stock;
 
     //CONSTRUCTOR
-    public Articulo()
+    /*public Articulo()
     {
+        this.nombre = null;
+        this.codigo = null;
         this.descripcion = null;
         this.precioCompra = 0;
         this.precioVenta = 0;
         this.stock = 0;
-    }
+    }*/
 
+    public Articulo(String nombre, String codigo, String descripcion, double precioCompra, double precioVenta, int stock)
+    {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
+        this.stock = stock;
+    }
 
     //GETTERS Y SETTERS
     //Getters
+    public String getNombre() {
+        return nombre;
+    }
+
     public String getCodigo() {
         return codigo;
     }
@@ -41,6 +57,10 @@ public class Articulo
     }
 
     //Setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
@@ -59,5 +79,17 @@ public class Articulo
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    //METODOS
+    @Override
+    public String toString() {
+        return "Articulo{" +
+                "codigo='" + codigo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precioCompra=" + precioCompra +
+                ", precioVenta=" + precioVenta +
+                ", stock=" + stock +
+                '}';
     }
 }
