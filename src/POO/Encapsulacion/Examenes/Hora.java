@@ -36,9 +36,6 @@ public class Hora
 
     @Override
     public String toString() {
-        return "Hora{" +
-                "hora=" + hora +
-                ", minutos=" + minutos +
-                '}';
+        return hora + ":" + minutos ;
     }
 }
