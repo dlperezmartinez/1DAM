@@ -56,9 +56,9 @@ public class Examen
     @Override
     public String toString() {
         return "\n--------\n" +
-                "aula: " + aula + '\n' +
-                "asignatura: " + asignatura + '\n' +
-                "fecha: " + fecha.toString() + '\n'+
-                "hora: " + hora.toString();
+                "Aula: " + aula + '\n' +
+                "Asignatura: " + asignatura + '\n' +
+                "Fecha: " + fecha.toString() + '\n'+
+                "Hora: " + hora.toString();
     }
 }
