@@ -1,7 +1,12 @@
 package POO.Herencia.Ejercicio2;
 
+import java.util.ArrayList;
+
 public class Planetas extends Astros
 {
+    //ARRAYLIST
+    ArrayList<Satelites> satelites;
+
     //ATRIBUTOS
     private double distanciaSol, orbitaSol;
     private boolean tieneSatelites; //Tiene o no satelites
@@ -14,6 +19,7 @@ public class Planetas extends Astros
         this.distanciaSol = distanciaSol;
         this.orbitaSol = orbitaSol;
         this.tieneSatelites = tieneSatelites;
+        this.satelites = new ArrayList<>();
     }
 
 
@@ -45,22 +51,30 @@ public class Planetas extends Astros
     }
 
     //METODOS
+    public void agregarSatelite(Satelites nombre)
+    {
+        satelites.add(Satelites.);
+    }
 
     //TOSTRING
     @Override
     public String toString() {
-        return "Planetas{" +
-                "radioEcuatorial=" + radioEcuatorial +
-                ", rotacionSobreEje=" + rotacionSobreEje +
-                ", gravedad=" + gravedad +
-                ", temperaturaMedia=" + temperaturaMedia +
-                ", distanciaSol=" + distanciaSol +
-                ", orbitaSol=" + orbitaSol +
-                ", tieneSatelites=" + tieneSatelites;
+        return  "\n-PLANETA-\n" +
+                "\nNombre: " + nombre +
+                "\nradioEcuatorial: " + radioEcuatorial +
+                "\nrotacionSobreEje: " + rotacionSobreEje +
+                "\ngravedad: " + gravedad +
+                "\ntemperaturaMedia: " + temperaturaMedia +
+                "\ndistanciaSol: " + distanciaSol +
+                "\norbitaSol: " + orbitaSol +
+                "\ntieneSatelites: " + tieneSatelites;
 
-        /*TODO if (tieneSatelites)
+        /*if (tieneSatelites)
         {
-            //TODO return
+            return "\n-LISTA SATELITES-\n" +
+                    ;
+
+
         }*/
     }
 }

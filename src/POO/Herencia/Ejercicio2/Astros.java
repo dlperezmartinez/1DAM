@@ -15,6 +15,7 @@ public class Astros
 
     public Astros(String nombre, double radioEcuatorial, double rotacionSobreEje, double gravedad, int temperaturaMedia)
     {
+        this.nombre = nombre;
         this.radioEcuatorial = radioEcuatorial;
         this.rotacionSobreEje = rotacionSobreEje;
         this.gravedad = gravedad;
@@ -39,6 +40,10 @@ public class Astros
         return temperaturaMedia;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     //setters
     public void setRadioEcuatorial(double radioEcuatorial) {
         this.radioEcuatorial = radioEcuatorial;
@@ -61,7 +66,8 @@ public class Astros
     //TOSTRING
     @Override
     public String toString() {
-        return "-ASTRO " +
+        return  "\n-ASTRO-\n" +
+                "\n Nombre: " + nombre +
                 "\nradioEcuatorial: " + radioEcuatorial +
                 "\nrotacionSobreEje: " + rotacionSobreEje +
                 "\ngravedad: " + gravedad +

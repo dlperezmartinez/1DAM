@@ -7,6 +7,12 @@ public class Satelites extends Astros
     private Planetas planetaOrbita; //Planeta al que orbita
 
     //CONSTRUCTOR
+
+    public Satelites()
+    {
+        super();
+    }
+
     public Satelites(String nombre, double radioEcuatorial, double rotacionSobreEje, double gravedad, int temperaturaMedia, double distanciaPlaneta, double orbitaPlanetaria, Planetas planetaOrbita)
     {
         super(nombre, radioEcuatorial, rotacionSobreEje, gravedad, temperaturaMedia);
@@ -49,14 +55,14 @@ public class Satelites extends Astros
     //TOSTRING
     @Override
     public String toString() {
-        return "Satelites{" +
-                "radioEcuatorial=" + radioEcuatorial +
-                ", rotacionSobreEje=" + rotacionSobreEje +
-                ", gravedad=" + gravedad +
-                ", temperaturaMedia=" + temperaturaMedia +
-                ", distanciaPlaneta=" + distanciaPlaneta +
-                ", orbitaPlanetaria=" + orbitaPlanetaria +
-                ", planetaOrbita=" + planetaOrbita +
-                '}';
+        return "\n-SATELITE-\n" +
+                "\nNombre: " + nombre +
+                "\nradioEcuatorial: " + radioEcuatorial +
+                "\nrotacionSobreEje: " + rotacionSobreEje +
+                "\ngravedad: " + gravedad +
+                "\ntemperaturaMedia: " + temperaturaMedia +
+                "\ndistanciaPlaneta: " + distanciaPlaneta +
+                "\norbitaPlanetaria: " + orbitaPlanetaria +
+                "\nplanetaOrbita: " + planetaOrbita;
     }
 }
