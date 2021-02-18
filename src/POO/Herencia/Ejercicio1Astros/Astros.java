@@ -1,7 +1,9 @@
-package POO.Herencia.Ejercicio2;
+package POO.Herencia.Ejercicio1Astros;
 
 public class Astros
 {
+    //public Object agregarPlaneta; //No sé lo que és, me lo ha puesto IntelliJ
+
     //ATRIBUTOS
     protected String nombre;
     protected double radioEcuatorial, rotacionSobreEje, gravedad;

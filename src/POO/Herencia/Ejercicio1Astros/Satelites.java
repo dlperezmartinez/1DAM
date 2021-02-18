@@ -1,4 +1,4 @@
-package POO.Herencia.Ejercicio2;
+package POO.Herencia.Ejercicio1Astros;
 
 public class Satelites extends Astros
 {

@@ -1,4 +1,4 @@
-package POO.Herencia.Ejercicio2;
+package POO.Herencia.Ejercicio1Astros;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -52,12 +52,29 @@ public class GestorAstros
                     }
 
                     break;
-                case 3:
+                /*case 3:
                     System.out.print("Introduce el nombre del PLANETA al que quieres agregar un SATELITE: ");
-                    String nombreSatelite = in.next();
+                    String nombrePlaneta= in.next();
+
+                    for (Astros n : astros)
+                    {
+                        if (n.getNombre().equals(nombrePlaneta)) //Comprueba si el planeta existe en la lista
+                        {
+                            System.out.print("Ahora introduce el  SATELITE: ");
+                            String nombreSatelite = in.next();
+
+                            n.agregarSatelite(nombreSatelite);
+                        }
+                        else
+                        {
+                            System.out.println("No figura ese planeta...");
+                        }
+                    }
 
 
-                    break;
+
+
+                    break;*/
             }
         }
 

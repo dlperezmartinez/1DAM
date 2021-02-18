@@ -1,4 +1,4 @@
-package POO.Herencia.Ejercicio2;
+package POO.Herencia.Ejercicio1Astros;
 
 import java.util.ArrayList;
 
@@ -53,7 +53,7 @@ public class Planetas extends Astros
     //METODOS
     public void agregarSatelite(Satelites nombre)
     {
-        satelites.add(Satelites.);
+        satelites.add(new Satelites());
     }
 
     //TOSTRING
