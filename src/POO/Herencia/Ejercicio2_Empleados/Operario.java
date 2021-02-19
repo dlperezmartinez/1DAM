@@ -1,4 +1,4 @@
-package POO.Herencia.Ejercicio2Empleados;
+package POO.Herencia.Ejercicio2_Empleados;
 
 public class Operario extends Empleado
 {

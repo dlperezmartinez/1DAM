@@ -1,4 +1,4 @@
-package POO.Herencia.Ejercicio1Astros;
+package POO.Herencia.Ejercicio_1Astros;
 
 public class Astros
 {
