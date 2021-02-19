@@ -54,8 +54,8 @@ public class Satelites extends Astros
 
     //TOSTRING
     @Override
-    public String toString() {
-        return "\n-SATELITE-\n" +
+    public void print() {
+        System.out.print( "\n-SATELITE-\n" +
                 "\nNombre: " + nombre +
                 "\nradioEcuatorial: " + radioEcuatorial +
                 "\nrotacionSobreEje: " + rotacionSobreEje +
@@ -63,6 +63,6 @@ public class Satelites extends Astros
                 "\ntemperaturaMedia: " + temperaturaMedia +
                 "\ndistanciaPlaneta: " + distanciaPlaneta +
                 "\norbitaPlanetaria: " + orbitaPlanetaria +
-                "\nplanetaOrbita: " + planetaOrbita;
+                "\nplanetaOrbita: " + planetaOrbita);
     }
 }

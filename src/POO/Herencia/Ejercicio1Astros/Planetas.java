@@ -53,28 +53,44 @@ public class Planetas extends Astros
     //METODOS
     public void agregarSatelite(Satelites nombre)
     {
-        satelites.add(new Satelites());
+        satelites.add(nombre);
     }
 
     //TOSTRING
     @Override
-    public String toString() {
-        return  "\n-PLANETA-\n" +
-                "\nNombre: " + nombre +
-                "\nradioEcuatorial: " + radioEcuatorial +
-                "\nrotacionSobreEje: " + rotacionSobreEje +
-                "\ngravedad: " + gravedad +
-                "\ntemperaturaMedia: " + temperaturaMedia +
-                "\ndistanciaSol: " + distanciaSol +
-                "\norbitaSol: " + orbitaSol +
-                "\ntieneSatelites: " + tieneSatelites;
+    public void print() {
+        if (this.tieneSatelites)
+         {
+             System.out.print(  "\n-PLANETA-\n" +
+                    "\nNombre: " + nombre +
+                    "\nradioEcuatorial: " + radioEcuatorial +
+                    "\nrotacionSobreEje: " + rotacionSobreEje +
+                    "\ngravedad: " + gravedad +
+                    "\ntemperaturaMedia: " + temperaturaMedia +
+                    "\ndistanciaSol: " + distanciaSol +
+                    "\norbitaSol: " + orbitaSol +
+                    "\ntieneSatelites: " + tieneSatelites +
+                    "\n-LISTA SATELITES-\n");
+             System.out.println();
 
-        /*if (tieneSatelites)
+            for (Satelites n : satelites)
+            {
+                System.out.println( n.getNombre());
+            }
+
+
+        }
+        else
         {
-            return "\n-LISTA SATELITES-\n" +
-                    ;
-
-
-        }*/
+            System.out.println(  "\n-PLANETA-\n" +
+                    "\nNombre: " + nombre +
+                    "\nradioEcuatorial: " + radioEcuatorial +
+                    "\nrotacionSobreEje: " + rotacionSobreEje +
+                    "\ngravedad: " + gravedad +
+                    "\ntemperaturaMedia: " + temperaturaMedia +
+                    "\ndistanciaSol: " + distanciaSol +
+                    "\norbitaSol: " + orbitaSol +
+                    "\ntieneSatelites: " + tieneSatelites);
+        }
     }
 }

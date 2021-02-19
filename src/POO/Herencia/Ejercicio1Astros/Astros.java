@@ -66,13 +66,13 @@ public class Astros
     //METODOS
 
     //TOSTRING
-    @Override
-    public String toString() {
-        return  "\n-ASTRO-\n" +
+
+    public void print() {
+        System.out.print(  "\n-ASTRO-\n" +
                 "\n Nombre: " + nombre +
                 "\nradioEcuatorial: " + radioEcuatorial +
                 "\nrotacionSobreEje: " + rotacionSobreEje +
                 "\ngravedad: " + gravedad +
-                "\ntemperaturaMedia: " + temperaturaMedia;
+                "\ntemperaturaMedia: " + temperaturaMedia);
     }
 }
