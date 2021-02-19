@@ -19,6 +19,25 @@ public class Perro extends Mascotas
         this.pulgas = pulgas;
     }
 
+    //GETTERS Y SETTERS
+    //getters
+    public String getRaza() {
+        return raza;
+    }
+
+    public boolean isPulgas() {
+        return pulgas;
+    }
+
+    //setters
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    public void setPulgas(boolean pulgas) {
+        this.pulgas = pulgas;
+    }
+
     //MÉTODOS
     @Override
     public String muestra()

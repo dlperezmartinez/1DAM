@@ -16,6 +16,25 @@ public class Loro extends Aves
         this.habla = habla;
     }
 
+    //GETTERS Y SETTERS
+    //getters
+    public String getOrigen() {
+        return origen;
+    }
+
+    public boolean isHabla() {
+        return habla;
+    }
+
+    //setters
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+
+    public void setHabla(boolean habla) {
+        this.habla = habla;
+    }
+
     //MÉTODOS
     @Override
     public String muestra()

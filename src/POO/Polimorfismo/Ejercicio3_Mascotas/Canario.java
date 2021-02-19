@@ -18,8 +18,26 @@ public class Canario extends Aves
         this.canta = canta;
     }
 
-    //MÉTODOS
+    //GETTERS Y SETTERS
+    //getters
+    public String getColor() {
+        return color;
+    }
 
+    public boolean isCanta() {
+        return canta;
+    }
+
+    //setters
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setCanta(boolean canta) {
+        this.canta = canta;
+    }
+
+    //MÉTODOS
     @Override
     public String muestra()
     {

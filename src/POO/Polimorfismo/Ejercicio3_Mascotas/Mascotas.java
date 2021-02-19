@@ -20,6 +20,41 @@ public abstract class Mascotas
         this.edad = edad;
     }
 
+    //GETTERS Y SETTERS
+    //getters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    //setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
     //MÉTODOS
     public String muestra()
     {

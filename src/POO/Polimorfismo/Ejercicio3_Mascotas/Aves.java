@@ -19,8 +19,26 @@ public abstract class Aves extends Mascotas
         this.vuela = vuela;
     }
 
-    //MÉTODOS
+    //GETTERS Y SETTERS
+    //getters
+    public String getPico() {
+        return pico;
+    }
 
+    public boolean isVuela() {
+        return vuela;
+    }
+
+    //setters
+    public void setPico(String pico) {
+        this.pico = pico;
+    }
+
+    public void setVuela(boolean vuela) {
+        this.vuela = vuela;
+    }
+
+    //MÉTODOS
     @Override
     public String muestra()
     {

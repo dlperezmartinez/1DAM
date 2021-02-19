@@ -19,6 +19,25 @@ public class Gato extends Mascotas
         this.peloLargo = peloLargo;
     }
 
+    //GETTERS Y SETTERS
+    //getters
+    public String getColor() {
+        return color;
+    }
+
+    public boolean isPeloLargo() {
+        return peloLargo;
+    }
+
+    //setters
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setPeloLargo(boolean peloLargo) {
+        this.peloLargo = peloLargo;
+    }
+
     //MÉTODOS
     @Override
     public String muestra()

@@ -9,8 +9,9 @@ public class GestorMascotas
         //INSTANCIAS
         Mascotas Kira = new Perro("Kira", "Vivo", "25345324", 2, "Pitbull", false);
         Mascotas Wendy = new Gato("Wendy", "Vivo", "53245", 7, "Naranja, blanco y marrón", false);
-        Mascotas Jack = new Loro("Jack", 3, "Pico de loro", true, "Me lo invento", true);
-        Mascotas Paco = new Canario();
+        Aves Jack = new Loro("Jack", "Vivo", "2354", 3, "Pico de loro", true, "Me lo invento", true);
+        Aves Paco = new Canario("Paco", "Vivo", "34543252", 6, "Pico de canario", false, "Amarillo", true);
+        //TODO preguntar a Jaume
 
         ArrayList<Mascotas> mascotas = new ArrayList<>();
 
@@ -20,12 +21,12 @@ public class GestorMascotas
         mascotas.add(Paco);
 
         //OPERACIONES
-        Kira.habla();
+        System.out.println(Kira.habla());
 
         Wendy.cumpleaños();
 
         Jack.morir(true);
-        Jack.muestra();
+        System.out.println(Jack.muestra());
 
         Paco.volar();
 
