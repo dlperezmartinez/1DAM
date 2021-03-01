@@ -7,7 +7,7 @@ public class Empresa
     //ATRIBUTOS
     private final String nombre, CIF;
     private String telefono, direccion;
-    ArrayList<Empleado> empleados;
+    ArrayList<Empleado> empleados = new ArrayList<>();
 
     //CONSTRUCTOR
     public Empresa(String nombre, String CIF, String telefono, String direccion) {
@@ -18,6 +18,11 @@ public class Empresa
     }
 
     //MÉTODOS
+    public void agregarEmpleados (Empleado emp)
+    {
+        empleados.add(emp);
+    }
+
     public void mostrarInformacion () //Muestra la información de todos los empleados
     {
         for (Empleado n : empleados)

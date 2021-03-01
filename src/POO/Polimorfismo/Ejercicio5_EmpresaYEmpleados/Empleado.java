@@ -4,7 +4,7 @@ public class Empleado
 {
     //ATRIBUTOS
     private final String nombre, DNI;
-    private String telefono, direccion;
+    private String telefono, direccion, empresa;
     private int edad;
     private double sueldo; //Mensual
 
@@ -16,7 +16,7 @@ public class Empleado
         this.sueldo = sueldo;
     }
 
-    public Empleado(String nombre, String DNI, String telefono, String direccion, int edad, double sueldo)
+    public Empleado(String nombre, String DNI, String telefono, String direccion, int edad, double sueldo, String empresa)
     {
         this.nombre = nombre;
         this.DNI = DNI;
@@ -24,6 +24,7 @@ public class Empleado
         this.direccion = direccion;
         this.edad = edad;
         this.sueldo = sueldo;
+        this.empresa = empresa;
     }
 
     //MÉTODOS
