@@ -17,6 +17,12 @@ public class Empresa
         this.direccion = direccion;
     }
 
+    //GETTERS Y SETTERS
+    //Getters
+    public String getNombre() {
+        return nombre;
+    }
+
     //MÉTODOS
     public void agregarEmpleados (Empleado emp)
     {
@@ -30,4 +36,39 @@ public class Empresa
             System.out.println(n.toString());
         }
     }
+
+    public void mostrarSueldo ()
+    {
+        for (Empleado n : empleados)
+        {
+            System.out.println("\n-SUELDO ANUAL-\n");
+            System.out.println("DNI: " + n.getDNI());
+            System.out.println("Sueldo bruto: " + n.getSueldo() * 12);
+            System.out.println("Sueldo neto: " + n.calcularSaldoNeto());
+        }
+    }
+
+    public double calcularSueldosBrutos()
+    {
+        double sueldosBrutos = 0;
+
+        for (Empleado n : empleados)
+        {
+            sueldosBrutos += n.getSueldo() * 12;
+        }
+        return sueldosBrutos;
+    }
+
+    public double calcularSueldosNetos()
+    {
+        double sueldosNetos = 0;
+
+        for (Empleado n : empleados)
+        {
+            sueldosNetos += n.calcularSaldoNeto();
+        }
+        return sueldosNetos;
+    }
+
+
 }

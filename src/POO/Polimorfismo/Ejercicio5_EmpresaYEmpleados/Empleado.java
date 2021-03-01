@@ -4,7 +4,7 @@ public class Empleado
 {
     //ATRIBUTOS
     private final String nombre, DNI;
-    private String telefono, direccion, empresa;
+    private String telefono, direccion;
     private int edad;
     private double sueldo; //Mensual
 
@@ -16,7 +16,7 @@ public class Empleado
         this.sueldo = sueldo;
     }
 
-    public Empleado(String nombre, String DNI, String telefono, String direccion, int edad, double sueldo, String empresa)
+    public Empleado(String nombre, String DNI, String telefono, String direccion, int edad, double sueldo)
     {
         this.nombre = nombre;
         this.DNI = DNI;
@@ -24,14 +24,24 @@ public class Empleado
         this.direccion = direccion;
         this.edad = edad;
         this.sueldo = sueldo;
-        this.empresa = empresa;
+    }
+
+    //GETTERS Y SETTERS
+    //Getters
+    public String getDNI() {
+        return DNI;
+    }
+
+    public double getSueldo() {
+        return sueldo;
     }
 
     //MÉTODOS
-    public void calcularSaldoNeto ()
+    public double calcularSaldoNeto ()
     {
+        double resultado;
         double sueldoAnual = this.sueldo * 12;
-        int irpf;
+        double irpf;
 
         if (sueldoAnual < 12000) //MENOR a 12000 20% de IRPF
         {
@@ -46,9 +56,9 @@ public class Empleado
             irpf = 40;
         }
 
-        double resultado = sueldoAnual - (sueldoAnual * (irpf / 100));
+        return resultado = sueldoAnual - (sueldoAnual * (irpf / 100));
 
-        System.out.println("El sueldo neto de " + this.nombre + " és: " + resultado);
+        //System.out.println("El sueldo neto de " + this.nombre + " és: " + resultado);
 
     }
 
