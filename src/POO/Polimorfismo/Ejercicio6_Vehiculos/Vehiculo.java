@@ -20,7 +20,6 @@ public abstract class Vehiculo
 
     //MÉTODOS
 
-
     //TOSTRING
     @Override
     public String toString()

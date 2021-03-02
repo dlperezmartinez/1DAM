@@ -5,6 +5,77 @@ import java.util.Scanner;
 
 public class GestorVehiculos
 {
+    //SCANNER
+    Scanner in = new Scanner(System.in);
+
+    //FUNCIONES
+    public void agregarVehiculo()
+    {
+        boolean continuar = true;
+        while (continuar)
+        {
+            System.out.println("\n-AGREGAR VEHICULO-\n");
+            System.out.println("| TERRESTRE | ACUATICO | AEREO | CANCELAR |");
+            System.out.println("|     1     |    2     |   3   |     4    |");
+            System.out.println("|");
+            System.out.println("V");
+            int menu;
+            menu = in.nextInt();
+
+            switch (menu)
+            {
+                case 1: //TERRESTRE
+                    agregarTerrestre();
+                    break;
+                case 2: //ACUATICO
+                    break;
+                case 3: //AEREO
+                    break;
+                case 4: //CANCELAR
+                    continuar = false;
+                    break;
+                default :
+                    System.out.println("Introduce solo números del 1 al 4 inclusive.");
+                    break;
+            }
+        }
+    }
+
+    public void agregarTerrestre ()
+    {
+        boolean continuar = true;
+        while (continuar)
+        {
+            //Variables
+            String matricula, modelo;
+            int numRuedas;
+            boolean aireAcondicionado;
+
+            System.out.println("\n-AGREGAR VEHICULO TERRESTRE-\n");
+            System.out.println("| COCHE | MOTO | ATRAS |");
+            System.out.println("|   1   |  2   |   3   |");
+            System.out.println("|");
+            System.out.println("V");
+            int menu;
+            menu = in.nextInt();
+
+            switch (menu)
+            {
+                case 1: //COCHE TODO
+                    new Coche(matricula, modelo, numRuedas, aireAcondicionado);
+                    break;
+                case 2: //MOTO
+                    break;
+                case 3: //ATRAS
+                    continuar = false;
+                    break;
+                default :
+                    System.out.println("Introduce solo números del 1 al 3 inclusive.");
+                    break;
+            }
+        }
+    }
+
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
@@ -53,7 +124,7 @@ public class GestorVehiculos
                     }
 
                     break;
-                case 3: //AGREGAR VEHICULO TODO
+                case 3: //AGREGAR VEHICULO
                     System.out.println("Intr");
 
                     break;
