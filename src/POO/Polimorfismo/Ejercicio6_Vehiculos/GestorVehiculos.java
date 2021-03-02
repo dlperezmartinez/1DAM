@@ -62,7 +62,7 @@ public class GestorVehiculos
             switch (menu)
             {
                 case 1: //COCHE TODO
-                    new Coche(matricula, modelo, numRuedas, aireAcondicionado);
+                    //new Coche(matricula, modelo, numRuedas, aireAcondicionado);
                     break;
                 case 2: //MOTO
                     break;
