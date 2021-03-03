@@ -4,6 +4,24 @@ import java.util.Scanner;
 
 public class Gestor
 {
+    /***********************************************/
+    private String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void solicitarNombre()
+    {
+        //SCANNER
+        Scanner in = new Scanner(System.in);
+
+        //Petición de nombre
+        System.out.print("Introduce nombre: ");
+        nombre = in.next();
+    }
+    /************************************************/
+
     public static void main(String[] args)
     {
         //SCANNER

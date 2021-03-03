@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Agenda
 {
+    //INSTANCIAS
+    Gestor gestor = new Gestor();
+
     //SCANNER
     Scanner in = new Scanner(System.in);
 
@@ -49,43 +52,42 @@ public class Agenda
 
     public boolean eliminarContacto() //ELIMINA UN CONTACTO
     {
-        //Petición de nombre
-        System.out.print("Introduce el nombre del contacto: ");
-        String nombre = in.next();
+        boolean ok;
+        //Busca el contacto
+        boolean existe = buscarContacto();
 
-        //Validación previa
-        for (Contacto n : contactos)
+        if (existe) //Borra el contacto
         {
-            if (nombre.equals(n.getNombre())) //Busca el nombre en la agenda
+            for (Contacto n : contactos)
             {
-                contactos.remove(n);
+                contactos.remove(gestor.getNombre()); //Busca el contacto y lo elimina
+            }
 
-                return true; //busqueda CON exito
-            }
-            else
-            {
-                return false; //busqueda SIN exito
-            }
+            ok = true; //Se ha eliminado CON éxito
         }
-        return false;
+        else
+        {
+            ok = false; //Se ha eliminado SIN éxito
+        }
+
+        return ok;
     }
 
     public boolean buscarContacto() //BUSCA UN CONTACTO
     {
         //Petición de nombre
-        System.out.print("Introduce el nombre del contacto: ");
-        String nombre = in.next();
+        gestor.solicitarNombre();
 
-        //Validación previa
+        //Validación
         for (Contacto n : contactos)
         {
-            if (nombre.equals(n.getNombre())) //Busca el nombre en la agenda
+            if (gestor.getNombre().equals(n.getNombre())) //Busca el nombre en la agenda
             {
-                return true; //busqueda CON exito
+                return true; //búsqueda CON exito
             }
             else
             {
-                return false; //busqueda SIN exito
+                return false; //búsqueda SIN exito
             }
         }
         return false;
