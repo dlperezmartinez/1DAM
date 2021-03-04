@@ -91,7 +91,7 @@ public class Gestor
 
             if (continuar)
             {
-                System.out.println(operacion + consinS + " exito."); //RESULTADO DE LA OPERACIÓN
+                System.out.println(operacion + consinS + " éxito."); //RESULTADO DE LA OPERACIÓN
             }
         }
     }

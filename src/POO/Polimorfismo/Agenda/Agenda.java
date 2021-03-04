@@ -27,40 +27,45 @@ public class Agenda
     //MÉTODOS
     public boolean añadirContacto() //AÑADE UN CONTACTO
     {
-        System.out.print("Introduce el nombre: ");
-        String nombre = in.next();
+        boolean ok;
 
-        System.out.print("Introduce el número de teléfono: ");
-        String telefono = in.next();
+        //Busca el contacto
+        boolean existe = buscarContacto();
 
-        //Validación previa
-        boolean esta = true;
-        for (Contacto n : contactos)
-        {//TODO tengo que hacer que este metodo no valide, sino que llame al metodo buscar para ello
-            if (nombre.equals(n.getNombre()))
-            {
-                esta = false;
-            }
-            else
-            {
-                System.out.println("debug");
-                contactos.add(new Contacto(nombre, telefono)); //Crea el contacto y lo añade a la agenda
-            }
+        if (existe)
+        {
+            System.out.println("Ese nombre ya existe...");
+
+            ok = false;
         }
-        return esta;
+        else
+        {
+            System.out.print("Introduce número: ");
+            String telefono = in.next();
+
+            contactos.add(new Contacto(gestor.getNombre(), telefono));
+
+            ok = true;
+        }
+
+        return ok;
     }
 
     public boolean eliminarContacto() //ELIMINA UN CONTACTO
     {
         boolean ok;
+
         //Busca el contacto
         boolean existe = buscarContacto();
 
         if (existe) //Borra el contacto
         {
-            for (Contacto n : contactos)
+            for (Contacto n : contactos) //Busca el contacto y lo elimina
             {
-                contactos.remove(gestor.getNombre()); //Busca el contacto y lo elimina
+                if (contactos.equals(gestor.getNombre())) ;
+                {
+                    contactos.remove(n);
+                }
             }
 
             ok = true; //Se ha eliminado CON éxito
@@ -95,13 +100,13 @@ public class Agenda
 
     public void listar()
     {
-        System.out.println("\n-LISTA DE CONTACTOS-");
+        System.out.println("\n-LISTA DE CONTACTOS-\n");
 
         int i = 1;
 
         for (Contacto n : contactos)
         {
-            System.out.println("\n" + i + "- " + n.toString());
+            System.out.println("" + i + "- " + n.toString());
             i++;
         }
     }
