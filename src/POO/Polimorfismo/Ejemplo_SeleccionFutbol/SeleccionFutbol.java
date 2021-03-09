@@ -1,4 +1,4 @@
-package polimorfisme;
+package POO.Polimorfismo.Ejemplo_SeleccionFutbol;
 
 public abstract class SeleccionFutbol {
 
@@ -62,7 +62,7 @@ public abstract class SeleccionFutbol {
 	public abstract void entrenamiento();
 
 	public void partidoFutbol() {
-		System.out.println("Asiste al Partido de Fútbol (Clase Padre)");
+		System.out.println("Asiste al Partido de Fï¿½tbol (Clase Padre)");
 	}
 
 }

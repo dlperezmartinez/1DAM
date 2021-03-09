@@ -14,6 +14,12 @@ public class Persona
         this.edad = edad;
     }
 
+    //GETTERS Y SETTERS
+    //Getters
+    public String getNombre() {
+        return nombre;
+    }
+
     @Override
     public String toString() {
         return  "\nNombre: " + nombre +

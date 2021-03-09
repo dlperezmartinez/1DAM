@@ -1,4 +1,4 @@
-package polimorfisme;
+package POO.Polimorfismo.Ejemplo_SeleccionFutbol;
 
 public class Entrenador extends SeleccionFutbol {
 

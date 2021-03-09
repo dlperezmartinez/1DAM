@@ -11,6 +11,12 @@ public class Profesor extends Persona
         this.asignatura = asignatura;
     }
 
+    //GETTERS Y SETTERS
+    //Getters
+    public String getNombre() {
+        return nombre;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "\nAsignatura: " + asignatura;

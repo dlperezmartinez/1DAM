@@ -16,13 +16,15 @@ public class ListaProfesores
         profesores.add(profesor);
     }
 
-    public String listarProfesores()
+    public void listarProfesores()
     {
+        int i = 1;
+
         for (Profesor n : profesores)
         {
-            return n.nombre
+            System.out.println(i + "- " + n.getNombre());
+            i++;
         }
-        Profesor.nombre
     }
 
 
