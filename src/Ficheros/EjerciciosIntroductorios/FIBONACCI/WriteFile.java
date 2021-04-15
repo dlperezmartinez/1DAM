@@ -11,10 +11,10 @@ public class WriteFile
         Scanner in = new Scanner(System.in);
         PrintWriter ExitFile = null;
 
-        try {
+        /*try {
             ExitFile = new PrintWriter("FIBONACCI.txt");
 
-        }
+        }*/
     }
 
 
