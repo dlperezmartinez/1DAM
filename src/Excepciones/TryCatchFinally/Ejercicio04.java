@@ -11,7 +11,7 @@ public class Ejercicio04
         int posicion = 0;
         boolean continuar = true;
 
-        for (int i = 0; i == vector.length; i++) {
+        for (int i = 0; i < vector.length; i++) {
             vector[i] = (int) (Math.random() * 9 + 1);
         }
 
