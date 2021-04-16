@@ -27,6 +27,7 @@ public class Ejercicio04
             } catch (InputMismatchException exception) {
 
                 System.out.println("Valor no válido.");
+                in.next();
 
             } catch (RuntimeException exception) {
 

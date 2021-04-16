@@ -14,7 +14,6 @@ public class Ejercicio03
 
         for (int i = 0; i < vector.length; i++)
         {
-            System.out.println("sdaf");
             try {
 
                 System.out.print("Introduce valor: ");
@@ -23,8 +22,8 @@ public class Ejercicio03
             } catch (InputMismatchException exception) {
 
                 System.out.println("Valor introducido no válido.");
-                continue;
-
+                in.next();
+                i--;
 
             }
         }
