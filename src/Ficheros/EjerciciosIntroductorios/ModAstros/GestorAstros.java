@@ -89,13 +89,20 @@ public class GestorAstros
                     try
                     {
                         ExitFile = new PrintWriter("ASTROS.txt");
+
+                        for (Astros n : astros)
+                        {
+                            ExitFile.println(n.getNombre());
+                        }
                     }
                     catch (FileNotFoundException e)
                     {
-                        //TODO FALTA TERMINAR LA GENERACIÓN DE ARCHIVO
+                        System.out.println(e.getMessage());
                     }
-
-
+                    finally
+                    {
+                        ExitFile.close();
+                    }
 
                     break;
             }
