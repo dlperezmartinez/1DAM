@@ -27,14 +27,63 @@ public class Principal
             menu = in.nextInt(); //Pide un número para la selección del menú
 
             switch (menu) {
-                case 1:
-                    gatos.add(new Gato(in.next()))//TODO esto
+                case 1: //REGISTRAR GATO
+                    System.out.print("Introduce nombre: ");
+                    String nombre = in.next();
+                    System.out.print("Introduce edad: ");
+                    int edad = in.nextInt();
+
+                    try
+                    {
+                        gatos.add(new Gato(nombre, edad));
+                    }
+                    catch (Exception ex)
+                    {
+                        System.out.println(ex.getMessage());
+                    }
 
                     break;
-                case 2:
+                case 2: //MODIFICAR GATO
+                    System.out.println("Introduce el nombre del gato que quieres modificar");
+
+                    for (Gato n: gatos)
+                    {
+                        if (in.next().equals(n.getNombre()))
+                        {
+                            try //Cambio de nombre
+                            {
+                                System.out.print("Introduce nuevo nombre: ");
+                                n.setNombre(in.next());
+                            }
+                            catch (Exception ex)
+                            {
+                                System.out.println(ex.getMessage());
+                            }
+
+                            try //Cambio de edad
+                            {
+                                System.out.print("Introduce nueva edad: ");
+                                n.setEdad(in.nextInt());
+                            }
+                            catch (Exception ex)
+                            {
+                                System.out.println(ex.getMessage());
+                            }
+
+                            break;
+                        }
+                        else //No existe el gato
+                        {
+                            System.out.println("No existe ese gato.");
+
+                            break;
+                        }
+                    }
+
 
                     break;
-                case 3:
+                case 3: //LISTAR GATOS
+                    System.out.println(gatos.toString());
 
                     break;
                 case 4: //SALIR
