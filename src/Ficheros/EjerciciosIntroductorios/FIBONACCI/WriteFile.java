@@ -10,11 +10,23 @@ public class WriteFile
     {
         Scanner in = new Scanner(System.in);
         PrintWriter ExitFile = null;
+        Fibonacci f1 = new Fibonacci("fibonacci 1",10);
 
-        /*try {
+        //f1.mostrarSerie();
+
+        try {
             ExitFile = new PrintWriter("FIBONACCI.txt");
-
-        }*/
+            ExitFile.println(f1.fibonacci(20));
+            ExitFile.flush();
+        }
+        catch (FileNotFoundException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        finally
+        {
+            ExitFile.close();
+        }
     }
 
 

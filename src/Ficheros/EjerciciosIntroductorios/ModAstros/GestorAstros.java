@@ -1,5 +1,7 @@
 package Ficheros.EjerciciosIntroductorios.ModAstros;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,6 +9,9 @@ public class GestorAstros
 {
     public static void main(String[] args)
     {
+        //FILE
+        PrintWriter ExitFile = null;
+
         //SCANNER
         Scanner in = new Scanner(System.in);
         //ARRAYLIST
@@ -36,8 +41,8 @@ public class GestorAstros
         boolean continuar = true;
         while(continuar)
         {
-            System.out.println("| LISTAR ASTROS | INFO ASTRO |");
-            System.out.println("|       1       |      2     |");
+            System.out.println("| LISTAR ASTROS | INFO ASTRO | GENERAR TXT |");
+            System.out.println("|       1       |      2     |      3      |");
 
             int menu = in.nextInt();
             switch (menu)
@@ -62,8 +67,8 @@ public class GestorAstros
                     }
 
                     break;
-                /*case 3:
-                    System.out.print("Introduce el nombre del PLANETA al que quieres agregar un SATELITE: ");
+                case 3: //GENERAR TXT
+                    /*System.out.print("Introduce el nombre del PLANETA al que quieres agregar un SATELITE: ");
                     String nombrePlaneta= in.next();
 
                     for (Astros n : astros)
@@ -79,12 +84,20 @@ public class GestorAstros
                         {
                             System.out.println("No figura ese planeta...");
                         }
+                    }*/
+
+                    try
+                    {
+                        ExitFile = new PrintWriter("ASTROS.txt");
+                    }
+                    catch (FileNotFoundException e)
+                    {
+                        //TODO FALTA TERMINAR LA GENERACIÓN DE ARCHIVO
                     }
 
 
 
-
-                    break;*/
+                    break;
             }
         }
 
