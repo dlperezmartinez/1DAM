@@ -5,9 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio01
+public class Ejercicio02
 {
-    static void muestraRuta(File file) throws FileNotFoundException
+    static void muestraRuta(File file, boolean info) throws FileNotFoundException
     {
         if (!file.exists()) //Comprueba si existe el file
         {
@@ -28,11 +28,21 @@ public class Ejercicio01
             {
                 if (n.isFile())
                 {
-                    System.out.println("[A] " + n.getName());
+                    System.out.print("[A] " + n.getName());
+                    if (info) //Si info es true muestra también los bytes
+                    {
+                        System.out.print(" " + n.length() + " bytes");
+                    }
+                    System.out.println();
                 }
                 else if (n.isDirectory())
                 {
-                    System.out.println("[*] " + n.getName());
+                    System.out.print("[*] " + n.getName());
+                    if (info) //Si info es true muestra también los bytes
+                    {
+                        System.out.print(" " + n.length() + " bytes");
+                    }
+                    System.out.println();
                 }
             }
         }
@@ -47,13 +57,13 @@ public class Ejercicio01
             try
             {
                 System.out.print("Introduce ruta: ");
-                 ruta = in.nextLine();
+                ruta = in.nextLine();
 
-                 if (!ruta.equals(""))
-                 {
-                     File file = new File(ruta);
-                     muestraRuta(file);
-                 }
+                if (!ruta.equals(""))
+                {
+                    File file = new File(ruta);
+                    muestraRuta(file, true);
+                }
             }
             catch (FileNotFoundException e)
             {

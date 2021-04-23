@@ -1,6 +1,7 @@
 package Ficheros;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 
@@ -18,8 +19,51 @@ import java.util.Arrays;
  * 
  */
 
-public class Exercici3 {
-	
+public class Ejercicio03
+{
+	static void quitarExtensionesArchivos(File file) throws FileNotFoundException
+	{
+		if (!file.exists()) //Comprueba si existe el file
+		{
+			throw new FileNotFoundException("Ruta no encontrada");
+		}
+
+		if (file.isFile())
+		{
+			file.getName();//TODO
+		}
+	}
+
+	static void imprimirListaArchivos(File file) throws FileNotFoundException
+	{
+		if (!file.exists()) //Comprueba si existe el file
+		{
+			throw new FileNotFoundException("Ruta no encontrada");
+		}
+
+		if (file.isFile()) //Comprueba si es un archivo
+		{
+			System.out.println("El nombre del archivo es: " + file.getName());
+		}
+		else if (file.isDirectory()) //Si no comprueba si es un directorio
+		{
+			File[] files = file.listFiles();
+
+			Arrays.sort(files);
+
+			for (File n: files)
+			{
+				if (n.isFile())
+				{
+					System.out.println("[A] " + n.getName());
+				}
+				else if (n.isDirectory())
+				{
+					System.out.println("[*] " + n.getName());
+				}
+			}
+		}
+	}
 
     /* **************************
      * Reanomenem les carpetes *
