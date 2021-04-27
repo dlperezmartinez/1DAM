@@ -1,7 +1,6 @@
 package Ficheros.CasoPractico;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 public class MiniTerminal
@@ -21,9 +20,12 @@ public class MiniTerminal
         do
         {
             System.out.print(":~" + fileman.getRutaActual() + " $"); //Devuelve la ruta actual (Se usa como prompt).
-            input = in.nextLine();
+            input = in.nextLine(); //Envía en forma de String lo introducido en terminal.
 
-            switch (input)
+            //MENÚ
+            String[] orden = input.split(" "); //Recoge el input y lo parte
+
+            switch (orden[0])
             {
                 case "pwd"://TODO
 
@@ -31,23 +33,67 @@ public class MiniTerminal
                     break;
 
                 case "cd": //CD TODO
-
+                    try
+                    {
+                        fileman.cd(orden[1]);
+                    } catch (FileNotFoundException e)
+                    {
+                        e.printStackTrace();
+                    }
 
                     break;
 
                 case "ls": //LS
-                    fileman.ls(false);
+                    try
+                    {
+                        fileman.ls(false);
+                    }
+                    catch (FileNotFoundException e)
+                    {
+                        e.printStackTrace();
+                    }
 
                     break;
 
                 case "ll": //LS PERO CON INFO
-                    fileman.ls(true);
+                    try
+                    {
+                        fileman.ls(true);
+                    }
+                    catch (FileNotFoundException e)
+                    {
+                        e.printStackTrace();
+                    }
+
+                    break;
+
+                case "mkdir": //MKDIR
+                    try
+                    {
+                        fileman.mkdir(orden[1]);
+                    }
+                    catch (FileNotFoundException e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
+
+                    break;
+
+                case "rm": //RM
+                    try
+                    {
+                        fileman.rm(orden [1]);
+                    }
+                    catch (FileNotFoundException e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
 
                     break;
 
                 case "exit": //SALIR
                     System.out.println("\nSaliendo de la terminal...\n");
-                    System.out.println("EXIT");
+                    //System.out.println("EXIT");
                     exit = true;
 
                     break;

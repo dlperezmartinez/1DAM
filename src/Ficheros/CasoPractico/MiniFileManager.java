@@ -2,6 +2,8 @@ package Ficheros.CasoPractico;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class MiniFileManager
@@ -20,6 +22,7 @@ public class MiniFileManager
     //Setters
 
     //MÉTODOS
+    //PWD
     public String pwd (File file) throws FileNotFoundException
     {
         String ruta = "";
@@ -27,11 +30,27 @@ public class MiniFileManager
         return ruta;
     }
 
-    public void cd(File argumento)
+    //CD
+    public void cd(String directorio) throws FileNotFoundException
     {
+        File nuevaRuta= new File(rutaActual.getAbsolutePath()+ "/" + directorio);
 
+        if (directorio.equals(".."))
+        {
+            rutaActual = new File(rutaActual.getParent());
+        }
+        else
+        {
+            rutaActual = nuevaRuta;
+        }
+
+        if (!nuevaRuta.exists())
+        {
+            throw new FileNotFoundException();
+        }
     }
 
+    //LS Y LL
     public void ls(boolean info) throws FileNotFoundException
     {
         if (!this.rutaActual.exists()) //Comprueba si existe el file
@@ -71,5 +90,43 @@ public class MiniFileManager
                 }
             }
         }
+    }
+
+    //MKDIR
+    public void mkdir(String newFile) throws FileNotFoundException
+    {
+        try
+        {
+            new FileWriter(newFile);
+
+            System.out.println("HECHO");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    //RM
+    public void rm(String file) throws FileNotFoundException
+    {
+        File filerm = new File(file);
+
+        if (filerm.isFile())
+        {
+            filerm.delete();
+
+            System.out.println("Archivo elminado.");
+        }
+
+        if (filerm.isDirectory())
+        {
+            filerm.delete();
+
+            System.out.println("D elminado.");
+        }
+
+            System.out.println("HECHO"); //TODO ESTO NO LO PUEDO HACER HASTA QUE NO SEPA HACER EL CD
+
     }
 }
