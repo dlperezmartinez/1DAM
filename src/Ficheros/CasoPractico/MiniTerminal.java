@@ -25,6 +25,10 @@ public class MiniTerminal
         {
             barra = '\\';
         }
+        else
+        {
+            barra = '/';
+        }
         fileman.setBarra(barra);
 
         do
