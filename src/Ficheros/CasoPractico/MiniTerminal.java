@@ -10,12 +10,22 @@ public class MiniTerminal
         Scanner in = new Scanner(System.in);
         boolean exit = false; //Se utiliza para salir del programa.
         String input = ""; //Se utiliza para introducir los comandos al terminal.
+        String system = System.getProperty("os.name"); //Comprueba el Sistema Operativo
+        char barra = ' '; //Dependiendo del Sistema Operativo será barra o contrabarra
 
         //INSTANCIAS
         MiniFileManager fileman = new MiniFileManager();
 
         //TERMINAL
+        System.out.println(system);
         System.out.println("\n- MINI TERMINAL -\n");
+
+        //Establece barra o contrabarra.
+        if (system.equals("Windows 10"))
+        {
+            barra = '\\';
+        }
+        fileman.setBarra(barra);
 
         do
         {
@@ -70,7 +80,7 @@ public class MiniTerminal
                 case "mkdir": //MKDIR
                     try
                     {
-                        fileman.mkdir(orden[1]);
+                        fileman.mk(orden[1]);
                     }
                     catch (FileNotFoundException e)
                     {

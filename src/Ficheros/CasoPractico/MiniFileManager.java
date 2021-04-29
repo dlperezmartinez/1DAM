@@ -1,15 +1,15 @@
 package Ficheros.CasoPractico;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 import java.util.Arrays;
 
 public class MiniFileManager
 {
     //ATRIBUTOS
     private File rutaActual = new File (System.getProperty("user.dir")); //Ruta actual
+    private char barra; //Dependiendo del Sistema Operativo será barra o contrabarra
+
     //CONTRUCTOR
 
     //GETTERS Y SETTERS
@@ -20,6 +20,10 @@ public class MiniFileManager
     }
 
     //Setters
+
+    public void setBarra(char barra) {
+        this.barra = barra;
+    }
 
     //MÉTODOS
     //PWD
@@ -33,7 +37,7 @@ public class MiniFileManager
     //CD
     public void cd(String directorio) throws FileNotFoundException
     {
-        File nuevaRuta= new File(rutaActual.getAbsolutePath()+ "/" + directorio);
+        File nuevaRuta= new File(rutaActual.getAbsolutePath()+ barra + directorio);
 
         if (directorio.equals(".."))
         {
@@ -46,7 +50,7 @@ public class MiniFileManager
 
         if (!nuevaRuta.exists())
         {
-            throw new FileNotFoundException();
+            throw new FileNotFoundException(); //TODO Si no existe se para el programa, ARREGLAR
         }
     }
 
@@ -93,17 +97,34 @@ public class MiniFileManager
     }
 
     //MKDIR
-    public void mkdir(String newFile) throws FileNotFoundException
+    public void mk(String newFile) throws FileNotFoundException
     {
-        try
+        if (newFile.charAt(newFile.length() - 1) == barra) //Comprueba el último caracter de la string
         {
-            new FileWriter(newFile);
-
-            System.out.println("HECHO");
+            try
+            {
+                File newDir = new File(rutaActual.getAbsolutePath() + barra + newFile);
+                rutaActual = newDir;
+                rutaActual.mkdir();
+                System.out.println("Directorio creado");
+            }
+            catch (Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
         }
-        catch (IOException e)
+        else //Sino, crea el archivo
         {
-            e.printStackTrace();
+            try
+            {
+                new FileWriter(newFile);
+
+                System.out.println("HECHO");
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 
