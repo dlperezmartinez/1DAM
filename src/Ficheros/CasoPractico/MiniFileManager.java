@@ -27,10 +27,9 @@ public class MiniFileManager
 
     //MÉTODOS
     //PWD
-    public String pwd (File file) throws FileNotFoundException
+    public String pwd () throws FileNotFoundException
     {
-        String ruta = "";
-
+        String ruta = rutaActual.getAbsolutePath();
         return ruta;
     }
 
@@ -70,22 +69,26 @@ public class MiniFileManager
         {
             File[] files = this.rutaActual.listFiles();
 
-            //Arrays.sort(files); //Ordenar TODO primero directorios, después archivos (orden alfabético)
+            Arrays.sort(files); //Ordenar
 
             for (File n: files)
             {
-                if (n.isFile())
+                if (n.isDirectory())
                 {
-                    System.out.print("[A] " + n.getName());
+                    System.out.print("[*] " + n.getName());
                     if (info) //Si info es true muestra también los bytes y la última modificación
                     {
                         System.out.print(" " + n.length() + " bytes" + " Última mod. " + n.lastModified());
                     }
                     System.out.println();
                 }
-                else if (n.isDirectory())
+            }
+
+            for (File n: files)
+            {
+                if (n.isFile())
                 {
-                    System.out.print("[*] " + n.getName());
+                    System.out.print("[A] " + n.getName());
                     if (info) //Si info es true muestra también los bytes y la última modificación
                     {
                         System.out.print(" " + n.length() + " bytes" + " Última mod. " + n.lastModified());
@@ -119,7 +122,7 @@ public class MiniFileManager
             {
                 new FileWriter(newFile);
 
-                System.out.println("HECHO");
+                System.out.println("Archivo creado");
             }
             catch (IOException e)
             {
@@ -148,6 +151,12 @@ public class MiniFileManager
         }
 
             System.out.println("HECHO"); //TODO ESTO NO LO PUEDO HACER HASTA QUE NO SEPA HACER EL CD
+
+    }
+
+    //MV
+    public void mv(String ruta)
+    {
 
     }
 }

@@ -16,11 +16,7 @@ public class MiniTerminal
         //INSTANCIAS
         MiniFileManager fileman = new MiniFileManager();
 
-        //TERMINAL
-        System.out.println(system);
-        System.out.println("\n- MINI TERMINAL -\n");
-
-        //Establece barra o contrabarra.
+        //Establece barra o contrabarra dependiendo del SO.
         if (system.equals("Windows 10"))
         {
             barra = '\\';
@@ -30,6 +26,10 @@ public class MiniTerminal
             barra = '/';
         }
         fileman.setBarra(barra);
+
+        //TERMINAL
+        System.out.println(system);
+        System.out.println("\n- MINI TERMINAL -\n");
 
         do
         {
@@ -41,12 +41,12 @@ public class MiniTerminal
 
             switch (orden[0])
             {
-                case "pwd"://TODO
-
+                case "pwd"://PWD
+                    System.out.println("La ruta actual es: " + fileman.pwd());
 
                     break;
 
-                case "cd": //CD TODO
+                case "cd": //CD
                     try
                     {
                         fileman.cd(orden[1]);
