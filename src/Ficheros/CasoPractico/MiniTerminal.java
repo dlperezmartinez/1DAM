@@ -52,7 +52,7 @@ public class MiniTerminal
                         fileman.cd(orden[1]);
                     } catch (FileNotFoundException e)
                     {
-                        e.printStackTrace();
+                        System.out.println("El directorio no existe.");
                     }
 
                     break;

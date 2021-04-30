@@ -49,7 +49,7 @@ public class MiniFileManager
 
         if (!nuevaRuta.exists())
         {
-            throw new FileNotFoundException(); //TODO Si no existe se para el programa, ARREGLAR
+            throw new FileNotFoundException();
         }
     }
 
@@ -150,8 +150,7 @@ public class MiniFileManager
             System.out.println("D elminado.");
         }
 
-            System.out.println("HECHO"); //TODO ESTO NO LO PUEDO HACER HASTA QUE NO SEPA HACER EL CD
-
+            System.out.println("HECHO");
     }
 
     //MV
