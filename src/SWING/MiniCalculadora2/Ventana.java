@@ -69,33 +69,6 @@ public class Ventana extends JFrame
         exponencial.setBounds((getWidth()/2)-60, 80, 110, 20);
         exponencial.setBackground(Color.DARK_GRAY);
         exponencial.setForeground(Color.white);
-        exponencial.setSelected(false);
-        exponencial.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent mouseEvent) {
-                exponencial.setSelected(true);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent mouseEvent) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent mouseEvent) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent mouseEvent) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent mouseEvent) {
-
-            }
-        });
         panel.add(exponencial);
 
         //agrupación
@@ -134,14 +107,15 @@ public class Ventana extends JFrame
                 }
 
                 //Calculos
-                if (sumatorio.isFocusPainted())
+                if (sumatorio.isSelected())
                 {
                     for (int i = valor1; i <= valor2; i++)
                     {
                         resultad += i;
                     }
                 }
-                else if (productorio.isFocusPainted())
+
+                if (productorio.isSelected())
                 {
                     resultad = 1;
 
@@ -150,13 +124,10 @@ public class Ventana extends JFrame
                         resultad *= i;
                     }
                 }
-                else if (exponencial.isSelected())
+
+                if (exponencial.isSelected())
                 {
                     resultad = Math.pow(valor1, valor2);
-                }
-                else
-                {
-                    resultad = 0;
                 }
 
                 //Conversión del resultado y envío
