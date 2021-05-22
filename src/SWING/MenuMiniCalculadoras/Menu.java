@@ -12,6 +12,6 @@ public class Menu extends JMenu
         setBounds(100, 100, 100, 100);
 
         JMenu menu = new JMenu();
-        set
+
     }
 }
