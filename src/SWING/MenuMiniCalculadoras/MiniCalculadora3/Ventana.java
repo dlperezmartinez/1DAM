@@ -1,4 +1,4 @@
-package SWING.MiniCalculadora3;
+package SWING.MenuMiniCalculadoras.MiniCalculadora3;
 
 import POO.CalculadoraNumComplejos.Calculadora;
 import POO.CalculadoraNumComplejos.NumerosComplejos;

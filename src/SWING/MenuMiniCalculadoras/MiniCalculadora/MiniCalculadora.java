@@ -1,9 +1,8 @@
-package SWING.MiniCalculadora3;
+package SWING.MenuMiniCalculadoras.MiniCalculadora;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class MiniCalculadora3
+public class MiniCalculadora
 {
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {

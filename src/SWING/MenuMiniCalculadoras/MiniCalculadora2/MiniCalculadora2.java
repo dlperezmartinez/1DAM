@@ -1,4 +1,4 @@
-package SWING.MiniCalculadora2;
+package SWING.MenuMiniCalculadoras.MiniCalculadora2;
 
 import java.awt.*;
 

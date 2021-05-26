@@ -1,12 +1,9 @@
-package SWING.MiniCalculadora2;
+package SWING.MenuMiniCalculadoras.MiniCalculadora2;
 
 import javax.swing.*;
-import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.InputMismatchException;
 
 public class Ventana extends JFrame
