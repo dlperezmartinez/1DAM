@@ -12,7 +12,7 @@ public class Ventana extends JFrame
         setTitle("MiniCalculadora");
         setBounds(500, 200, 230, 250);
         //setIconImage("Calcular.png");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         setVisible(true);
 
         JPanel panel = new JPanel();

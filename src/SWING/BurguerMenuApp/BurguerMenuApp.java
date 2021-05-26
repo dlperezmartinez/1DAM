@@ -24,7 +24,7 @@ class Ventana extends JFrame
         setTitle("Pedido");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setBounds(400, 200, 500, 500);
+        setBounds(400, 200, 440, 500);
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -289,7 +289,6 @@ class Ventana extends JFrame
         /********************EXTRAS********************/
 
         /********************SALSAS********************/
-
         //BORDE
         JPanel salsasPane = new JPanel();
         salsasPane.setBorder(BorderFactory.createLineBorder(Color.white));
@@ -307,7 +306,7 @@ class Ventana extends JFrame
 
         //Ketchup
         JLabel ketchup = new JLabel("Ketchup");
-        ketchup.setBounds(30, 10, 70, 20);
+        ketchup.setBounds(30, 2, 80, 20);
         ketchup.setForeground(Color.white);
         JSpinner ketchupSp = new JSpinner();
         ketchupSp.setBounds(ketchup.getX()+ketchup.getWidth()+5, ketchup.getY(), 60, 20);
@@ -316,22 +315,28 @@ class Ventana extends JFrame
 
         //barbacoa
         JLabel barbacoa = new JLabel("Barbacoa");
+        barbacoa.setBounds(ketchup.getX(), ketchup.getY()+25, 80, 20);
         barbacoa.setForeground(Color.white);
         JSpinner barbacoaSp = new JSpinner();
+        barbacoaSp.setBounds(barbacoa.getX()+barbacoa.getWidth()+5, barbacoa.getY(), 60, 20);
         panel.add(barbacoa);
         panel.add(barbacoaSp);
 
         //mostaza
         JLabel mostaza = new JLabel("Mostaza");
+        mostaza.setBounds(barbacoa.getX(), barbacoa.getY()+25, 80, 20);
         mostaza.setForeground(Color.white);
         JSpinner mostazaSp = new JSpinner();
+        mostazaSp.setBounds(mostaza.getX()+mostaza.getWidth()+5, mostaza.getY(), 60, 20);
         panel.add(mostaza);
         panel.add(mostazaSp);
 
         //mayonesa
         JLabel mayonesa = new JLabel("Mayonesa");
+        mayonesa.setBounds(mostaza.getX(), mostaza.getY()+25, 80, 20);
         mayonesa.setForeground(Color.white);
         JSpinner mayonesaSp = new JSpinner();
+        mayonesaSp.setBounds(mayonesa.getX()+mayonesa.getWidth()+5, mayonesa.getY(), 60, 20);
         panel.add(mayonesa);
         panel.add(mayonesaSp);
 
@@ -344,7 +349,6 @@ class Ventana extends JFrame
         salsasPane.add(mostazaSp);
         salsasPane.add(mayonesa);
         salsasPane.add(mayonesaSp);
-
         /********************SALSAS********************/
     }
 }

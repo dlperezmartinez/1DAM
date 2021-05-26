@@ -46,9 +46,11 @@ public class Ventana extends JFrame implements ActionListener
                 public void run() {
                     SWING.MenuMiniCalculadoras.MiniCalculadora.Ventana ventana = new SWING.MenuMiniCalculadoras.MiniCalculadora.Ventana();
                     ventana.setVisible(true);
+                    //ventana.setDefaultCloseOperation(); TODO Me gustaría que cuando se cierre esta ventana apareciera de nuevo la principal
                 }
             });
         }
+
         if (a.getSource() == miniCalculadora2)
         {
             EventQueue.invokeLater(new Runnable() {
@@ -59,6 +61,7 @@ public class Ventana extends JFrame implements ActionListener
                 }
             });
         }
+
         if (a.getSource() == miniCalculadora3)
         {
             EventQueue.invokeLater(new Runnable() {
@@ -69,5 +72,7 @@ public class Ventana extends JFrame implements ActionListener
                 }
             });
         }
+
+        setVisible(false);
     }
 }
