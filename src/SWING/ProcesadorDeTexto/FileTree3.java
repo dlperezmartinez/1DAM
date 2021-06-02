@@ -13,13 +13,13 @@ import javax.swing.event.*;
 public class FileTree3 extends JFrame
 {
     public static final ImageIcon ICON_COMPUTER =
-            new ImageIcon("computer.gif");
+            new ImageIcon("/home/nocend/IdeaProjects/1DAM/src/SWING/ProcesadorDeTexto/icons/computer.png");
     public static final ImageIcon ICON_DISK =
-            new ImageIcon("disk.gif");
+            new ImageIcon("/home/nocend/IdeaProjects/1DAM/src/SWING/ProcesadorDeTexto/icons/hard-disc.png");
     public static final ImageIcon ICON_FOLDER =
-            new ImageIcon("folder.gif");
+            new ImageIcon("/home/nocend/IdeaProjects/1DAM/src/SWING/ProcesadorDeTexto/icons/folder.png");
     public static final ImageIcon ICON_EXPANDEDFOLDER =
-            new ImageIcon("expandedfolder.gif");
+            new ImageIcon("/home/nocend/IdeaProjects/1DAM/src/SWING/ProcesadorDeTexto/icons/openfolder.png");
 
     protected JTree  m_tree;
     protected DefaultTreeModel m_model;
@@ -34,8 +34,15 @@ public class FileTree3 extends JFrame
         super("Axploradó d'arxius");
         setSize(400, 300);
 
+        //JButton obrir = new JButton("Obrir");
+        //getContentPane().add(obrir, BorderLayout.SOUTH);
+
+        JButton cancela = new JButton("Cansela");
+        cancela.setSize(getWidth()/2, 20);
+        add(cancela, BorderLayout.SOUTH);
+
         DefaultMutableTreeNode top = new DefaultMutableTreeNode(
-                new IconData(ICON_COMPUTER, null, "Computer"));
+                new IconData(ICON_COMPUTER, null, "L'ordinadó"));
 
         DefaultMutableTreeNode node;
         File[] roots = File.listRoots();
