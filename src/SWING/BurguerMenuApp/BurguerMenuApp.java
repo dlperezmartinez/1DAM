@@ -2,6 +2,8 @@ package SWING.BurguerMenuApp;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BurguerMenuApp
 {
@@ -19,12 +21,15 @@ public class BurguerMenuApp
 
 class Ventana extends JFrame
 {
+    //ATRIBUTOS
+    private double precioFinal;
+
     public Ventana ()
     {
         setTitle("Pedido");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setBounds(400, 200, 440, 500);
+        setBounds(400, 200, 460, 550);
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -299,7 +304,7 @@ class Ventana extends JFrame
         panel.add(salsasPane);
 
         //SALSAS
-        JLabel salsas = new JLabel("Salsas");
+        JLabel salsas = new JLabel("Salsas +0.50€/u");
         salsas.setBounds(salsasPane.getX(), extras.getY(), 200, 20);
         salsas.setForeground(Color.white);
         panel.add(salsas);
@@ -310,8 +315,6 @@ class Ventana extends JFrame
         ketchup.setForeground(Color.white);
         JSpinner ketchupSp = new JSpinner();
         ketchupSp.setBounds(ketchup.getX()+ketchup.getWidth()+5, ketchup.getY(), 60, 20);
-        panel.add(ketchup);
-        panel.add(ketchupSp);
 
         //barbacoa
         JLabel barbacoa = new JLabel("Barbacoa");
@@ -319,8 +322,6 @@ class Ventana extends JFrame
         barbacoa.setForeground(Color.white);
         JSpinner barbacoaSp = new JSpinner();
         barbacoaSp.setBounds(barbacoa.getX()+barbacoa.getWidth()+5, barbacoa.getY(), 60, 20);
-        panel.add(barbacoa);
-        panel.add(barbacoaSp);
 
         //mostaza
         JLabel mostaza = new JLabel("Mostaza");
@@ -328,8 +329,6 @@ class Ventana extends JFrame
         mostaza.setForeground(Color.white);
         JSpinner mostazaSp = new JSpinner();
         mostazaSp.setBounds(mostaza.getX()+mostaza.getWidth()+5, mostaza.getY(), 60, 20);
-        panel.add(mostaza);
-        panel.add(mostazaSp);
 
         //mayonesa
         JLabel mayonesa = new JLabel("Mayonesa");
@@ -337,8 +336,6 @@ class Ventana extends JFrame
         mayonesa.setForeground(Color.white);
         JSpinner mayonesaSp = new JSpinner();
         mayonesaSp.setBounds(mayonesa.getX()+mayonesa.getWidth()+5, mayonesa.getY(), 60, 20);
-        panel.add(mayonesa);
-        panel.add(mayonesaSp);
 
         //-- Los add's
         salsasPane.add(ketchup);
@@ -350,5 +347,127 @@ class Ventana extends JFrame
         salsasPane.add(mayonesa);
         salsasPane.add(mayonesaSp);
         /********************SALSAS********************/
+
+        /********************ENTREGA/RECOGIDA********************/
+        //reparto
+        JRadioButton reparto = new JRadioButton("Reparto a domicilio");
+        reparto.setBounds(extrasPane.getX(), extrasPane.getY()+extrasPane.getHeight()+10, 200, 20);
+        reparto.setBackground(Color.DARK_GRAY);
+        reparto.setForeground(Color.white);
+        panel.add(reparto);
+
+        //recogida
+        JRadioButton recogida = new JRadioButton("Recogida en local -20% €");
+        recogida.setBounds(salsasPane.getX(), salsasPane.getY()+salsasPane.getHeight()+10, 200, 20);
+        recogida.setBackground(Color.DARK_GRAY);
+        recogida.setForeground(Color.white);
+        panel.add(recogida);
+
+        //group
+        ButtonGroup entregaRecogidaGroup = new ButtonGroup();
+        entregaRecogidaGroup.add(reparto);
+        entregaRecogidaGroup.add(recogida);
+        /********************ENTREGA/RECOGIDA********************/
+
+        /********************CALCULAR********************/
+        Button calcular = new Button("CALCULAR");
+        calcular.setBounds(reparto.getX()+40, reparto.getY()+reparto.getHeight()+35, 90, 30);
+        panel.add(calcular);
+        /********************CALCULAR********************/
+
+        /********************PRECIOS********************/
+        //BORDE
+        JPanel preciosPane = new JPanel();
+        preciosPane.setBounds(calcular.getX()+calcular.getWidth()+40, recogida.getY()+30, 220, 60);
+        preciosPane.setBackground(Color.DARK_GRAY);
+        preciosPane.setLayout(null);
+
+        panel.add(preciosPane);
+
+        //precio
+        JLabel precio = new JLabel("PRECIO");
+        precio.setBounds(20, 10, 50, 20);
+        precio.setForeground(Color.white);
+
+        JTextPane precioPane = new JTextPane();
+        precioPane.setBounds(precio.getX(), precio.getY()+25, precio.getWidth(), precio.getHeight());
+
+
+        //iva
+        JLabel iva = new JLabel("IVA 21%");
+        iva.setBounds(precio.getX()+precio.getWidth()+20, precio.getY(), precio.getWidth(), precio.getHeight());
+        iva.setForeground(Color.white);
+
+        JTextPane ivaPane = new JTextPane();
+        ivaPane.setBounds(iva.getX(), iva.getY() +25, precio.getWidth(), precio.getHeight());
+
+        //pvp
+        JLabel pvp = new JLabel("P.V.P");
+        pvp.setBounds(iva.getX()+precio.getWidth()+20, iva.getY(), precio.getWidth(), precio.getHeight());
+        pvp.setForeground(Color.white);
+
+        JTextPane pvpPane = new JTextPane();
+        pvpPane.setBounds(pvp.getX(), pvp.getY() +25, precio.getWidth(), precio.getHeight());
+
+        preciosPane.add(precio);
+        preciosPane.add(precioPane);
+        preciosPane.add(iva);
+        preciosPane.add(ivaPane);
+        preciosPane.add(pvp);
+        preciosPane.add(pvpPane);
+        /********************PRECIOS********************/
+
+        calcular.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                precioFinal = 8;
+
+                //Estos if's añadirán al precio los correspondientes costes
+                if (ternera.isSelected() || vegana.isSelected())
+                {
+                    precioFinal = precioFinal + 1;
+                }
+
+                if (caseras.isSelected())
+                {
+                    precioFinal = precioFinal + 1;
+                }
+
+                if (hamburguesaDoble.isSelected())
+                {
+                    precioFinal = precioFinal +2;
+                }
+
+                if (extraQueso.isSelected())
+                {
+                    precioFinal = precioFinal + 0.5;
+                }
+
+                if (extraPatatas.isSelected())
+                {
+                    precioFinal = precioFinal + 1;
+                }
+
+                //suma de extras
+                int extras = (int) ketchupSp.getValue()+(int) barbacoaSp.getValue()+(int) mostazaSp.getValue()+(int) mayonesaSp.getValue();
+
+                for (int i = 0; i < extras; i++)
+                {
+                    precioFinal = precioFinal + 0.5;
+                }
+
+                //posible descuento
+                if (recogida.isSelected())
+                {
+                    precioFinal = precioFinal - (precioFinal *0.2);
+                }
+
+                //precio final
+                precioPane.setText(String.valueOf(precioFinal) + "€");
+                ivaPane.setText(String.valueOf((precioFinal*1.21)-precioFinal) + "€");
+                pvpPane.setText(String.valueOf(precioFinal*1.21) + "€");
+            }
+        });
     }
 }
