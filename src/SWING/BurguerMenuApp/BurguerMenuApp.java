@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 public class BurguerMenuApp
 {
@@ -22,6 +23,7 @@ public class BurguerMenuApp
 class Ventana extends JFrame
 {
     //ATRIBUTOS
+    DecimalFormat df = new DecimalFormat("#.##");
     private double precioFinal;
 
     public Ventana ()
@@ -324,7 +326,7 @@ class Ventana extends JFrame
         barbacoaSp.setBounds(barbacoa.getX()+barbacoa.getWidth()+5, barbacoa.getY(), 60, 20);
 
         //mostaza
-        JLabel mostaza = new JLabel("Mostaza");
+        JLabel mostaza = new JLabel("Allioli");
         mostaza.setBounds(barbacoa.getX(), barbacoa.getY()+25, 80, 20);
         mostaza.setForeground(Color.white);
         JSpinner mostazaSp = new JSpinner();
@@ -465,7 +467,7 @@ class Ventana extends JFrame
 
                 //precio final
                 precioPane.setText(String.valueOf(precioFinal) + "€");
-                ivaPane.setText(String.valueOf((precioFinal*1.21)-precioFinal) + "€");
+                ivaPane.setText(String.valueOf(df.format((precioFinal*1.21)-precioFinal)) + "€");
                 pvpPane.setText(String.valueOf(precioFinal*1.21) + "€");
             }
         });
